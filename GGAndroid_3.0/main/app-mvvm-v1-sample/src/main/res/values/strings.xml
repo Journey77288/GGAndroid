@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">甘果Android组件</string>
+
+    <!--运动类型 数组-->
+    <string-array name="sports">
+        <item>足球</item>
+        <item>篮球</item>
+        <item>台球</item>
+        <item>羽毛球</item>
+        <item>乒乓球</item>
+        <item>跑步</item>
+        <item>俯卧撑</item>
+        <item>引体向上</item>
+        <item>网球</item>
+        <item>瑜伽</item>
+        <item>游泳</item>
+    </string-array>
+
+    <!--  首页菜单  -->
+    <string name="str_home_database_kotlin">数据库kotlin版本</string>
+    <string name="str_home_database_java">数据库java版本</string>
+    <string name="str_home_refresh_load_more">上拉加载与下拉刷新</string>
+    <string name="str_home_rx_bus">RxBus订阅</string>
+    <string name="str_home_dialog">弹窗</string>
+    <string name="str_home_http_chuck">api请求抓包调试</string>
+    <string name="str_home_http">网络请求</string>
+    <string name="str_home_folding_linkage">折叠联动效果</string>
+    <string name="str_home_folding_linkage_toolbar">带Toolbar折叠联动效果</string>
+    <string name="str_home_banner">广告轮播组件</string>
+    <string name="str_home_diff_util">DiffUtil刷新工具</string>
+    <string name="str_home_webView">浏览器组件</string>
+    <string name="str_home_gallery">ViewPager实现画廊效果</string>
+    <string name="str_home_rx_activity_result">RxActivityResult使用示例</string>
+    <string name="str_home_tab_layout">TabLayout组件</string>
+    <string name="str_home_rx_java">RxJava使用示例</string>
+    <string name="str_home_select_manager">选择管理器</string>
+    <string name="str_home_permission">权限获取</string>
+    <string name="str_home_camera">调用系统相机拍照示例</string>
+    <string name="str_home_photo">调用系统相册选取照片</string>
+    <string name="str_home_sidebar">SideBar使用示例</string>
+    <string name="str_home_lazy_load">LazyHelper使用示例</string>
+    <string name="str_home_loading_helper">LoadingHelper使用示例</string>
+    <string name="str_home_text_load_html">使用TextView加载Html内容</string>
+    <string name="str_home_crop_photo">照片裁剪组件</string>
+    <string name="str_home_keyboard_state">键盘状态监听</string>
+    <string name="str_home_save_view_2_photo">保存View内容为本地图片</string>
+    <string name="str_home_push">极光推送</string>
+    <string name="str_home_switch_btn">开关按钮</string>
+    <string name="str_home_page_state_helper">页面状态管理工具</string>
+    <string name="str_home_have_no_legal_power">没有权限</string>
+    <string name="str_home_get_permissions_success">权限获取成功</string>
+    <string name="str_home_access_failed">权限获取失败</string>
+    <string name="str_home_app_update">app版本更新</string>
+
+
+    <!--推送-->
+    <string name="str_cancel">取消</string>
+    <string name="str_confirm">确定</string>
+    <string name="str_push_count">接受推送数量:</string>
+    <string name="str_push_test_account">测试账号请在 Trello 甘果-Android 公司公用账号 中查看\n 管理页面测试推送 请选择自定义消息</string>
+    <string name="str_push_delete_alias">删除别名：</string>
+    <string name="str_push_setting_alias">设置别名</string>
+    <string name="str_push_setting_alias_ing">正在设置别名</string>
+    <string name="str_push_setting_alias_success">设置别名成功</string>
+    <string name="str_push_delete_alias_ing">正在删除别名</string>
+    <string name="str_push_delete_alias_success">删除别名成功</string>
+
+    <string name="str_language_switch">语言切换</string>
+    <string name="str_language_chinese">中文</string>
+    <string name="str_language_english">英文</string>
+    <string name="str_language_is_already">已是该语言环境</string>
+</resources>

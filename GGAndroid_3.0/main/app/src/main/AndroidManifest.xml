@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.ganguo.incubator">
+
+    <!-- 极光 SDK 注册了这两个权限；如果项目不需要，则可以通过 note 移除 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-feature android:name="android.hardware.screen.portrait" />
+
+    <application
+        android:name=".context.AppContext"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="${appLabel}${appLabelSuffix}"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Activity.NoActionbar"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label">
+
+        <activity
+            android:name=".view.general.activity.SplashActivity"
+            android:theme="@style/Activity.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.general.activity.ApkInfoActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.general.activity.SchemeActivity"
+            android:theme="@style/Activity.Transparent"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="ganguo" />
+            </intent-filter>
+        </activity>
+
+        <!-- 通知回调 -->
+        <receiver
+            android:name=".receiver.NotificationReceiver"
+            android:exported="true" />
+    </application>
+</manifest>

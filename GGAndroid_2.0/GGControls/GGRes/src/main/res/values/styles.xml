@@ -1,0 +1,108 @@
+<resources>
+    <!-- Base application theme. android:Theme.Holo.Light -->
+    <style name="Theme.Me" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Activity.Me.Style1</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--NoActionBar Theme Style -->
+    <style name="ThemeNoActionBar" parent="Theme.Me">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--Activity Animation style1 -->
+    <style name="Animation.Activity.Me.Style1" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_to_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_to_right</item>
+    </style>
+    <!--Activity Animation style2 -->
+    <style name="Animation.Activity.Me.Style2" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/no_animation</item>
+        <item name="android:activityCloseEnterAnimation">@anim/no_animation</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out_to_bottom</item>
+    </style>
+
+    <!--Custom Dialog Style -->
+    <style name="CustomDialogStyle" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--Loading style2 -->
+    <style name="LoadingDialogStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <!--EditTextView Control Style -->
+    <style name="EditTextTheme" parent="Theme.Me">
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+    </style>
+
+
+    <!--TextView Hint Style-->
+    <style name="TextHintStyle">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/font_11</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--PopupWindow Anim Style -->
+    <style name="popupWindowAnimStyle">
+        <item name="android:windowEnterAnimation">@anim/anim_popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_popup_exit</item>
+    </style>
+
+
+    <!--EditText Counter Style -->
+    <style name="EditTextCounterStyle">
+        <item name="android:textColor">@color/black_translucent</item>
+    </style>
+
+    <!--EditText Counter Override Style -->
+    <style name="EditTextCounterOverrideStyle">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <!--EditText Error Style -->
+    <style name="EditTextErrorStyle">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <!--transparentTheme Style -->
+    <style name="transparentTheme" parent="ThemeNoActionBar">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--SplashActivity Style -->
+    <style name="SplashTheme" parent="ThemeNoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/ic_start</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Activity.Me.Style2</item>
+    </style>
+</resources>

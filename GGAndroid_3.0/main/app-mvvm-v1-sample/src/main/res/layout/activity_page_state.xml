@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.demo.viewmodel.activity.PageStateDemoVModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include_header"
+            layout="@layout/include_header" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:bind_selected="@{data.loadingSelect}"
+                android:gravity="center"
+                android:onClick="@{data.actionShowLoading()}"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="Loading"
+                android:textColor="@color/selector_tab_text" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:bind_selected="@{data.emptySelect}"
+                android:gravity="center"
+                android:onClick="@{data.actionShowEmpty()}"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="空页面"
+                android:textColor="@color/selector_tab_text" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:bind_selected="@{data.netWorkErrorSelect}"
+                android:gravity="center"
+                android:onClick="@{data.actionShowNetWorkError()}"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="网络错误"
+                android:textColor="@color/selector_tab_text" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:bind_selected="@{data.errorSelect}"
+                android:gravity="center"
+                android:onClick="@{data.actionShowPageError()}"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="一般错误"
+                android:textColor="@color/selector_tab_text" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:bind_selected="@{data.contentSelect}"
+                android:gravity="center"
+                android:onClick="@{data.actionShowContent()}"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="页面内容"
+                android:textColor="@color/selector_tab_text" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/red"
+                android:gravity="center"
+                android:text="我是内容View"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18" />
+
+            <FrameLayout
+                android:id="@+id/fly_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

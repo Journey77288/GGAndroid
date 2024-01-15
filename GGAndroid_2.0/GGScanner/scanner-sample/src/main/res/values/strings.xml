@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GGScanner-sample</string>
+    <string name="str_qr_code_hint">二维码扫描提示</string>
+    <string name="str_bar_code_hint">条形码扫描提示</string>
+</resources>

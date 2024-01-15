@@ -1,0 +1,169 @@
+//App通用gradle配置（开发阶段很少变更的配置）
+apply from: "${rootProject.projectDir}/config/signingConfig.gradle"
+apply from: "${rootProject.projectDir}/config/task.gradle"
+apply plugin: 'com.android.application'
+
+//统一排除依赖
+configurations {
+    all*.exclude group: 'com.android.support', module: 'support-v13'
+}
+
+//app gradle通用配置
+android {
+
+    //gradle run时，同时执行以下task
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn 'deleteOutputsApk'
+    }
+
+    dexOptions {
+        jumboMode = true
+        javaMaxHeapSize "4g"
+        dexInProcess true
+        //不要Lib做preDex
+        preDexLibraries = false
+    }
+
+    //开启dataBinding配置
+    dataBinding {
+        enabled = true
+    }
+
+    //编译版本配置
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
+
+    //Gradle检查PNG的合法性
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+    //配置编译版本号等
+    defaultConfig {
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+    }
+
+    //lint检查
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'MissingTranslation'
+    }
+
+    //移除第三方sdk中的档案
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    compileOptions {
+        //开启增量编译
+        incremental = true
+        //配置java编译版本
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    sourceSets {
+        debug.setRoot('src/debug')
+        release.setRoot('src/release')
+    }
+
+    //多渠道默认配置
+    flavorDimensions "default"
+    //配置资源目录
+    buildTypes {
+        debug {
+            buildConfigField "int", "LOG_LEVEL", "2" // Log.VERBOSE
+            debuggable true
+            crunchPngs false // debug构建类型禁用PNG运算
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false // debug包用于开发时使用, 一般不需要混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.ganguo_dev
+            //lint检查
+            lintOptions {
+                abortOnError false
+                checkReleaseBuilds false
+            }
+        }
+        release {
+            buildConfigField "int", "LOG_LEVEL", "4" // Log.INFO
+            debuggable false
+            crunchPngs true // 发布构建开启PNG运算，减少包体积
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled true // 强烈建议使用代码混淆, 用于测试部门、客户测试、上线
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.rekall
+            //lint检查
+            lintOptions {
+                abortOnError false
+                checkReleaseBuilds false
+            }
+        }
+
+        // 命名各apk
+        applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                def mApplicationId = variant.mergedFlavor.applicationId + (variant.buildType.applicationIdSuffix == null ? "" : variant.buildType.applicationIdSuffix)
+                def mVersionName = variant.mergedFlavor.versionName + (variant.buildType.versionNameSuffix == null ? "" : variant.buildType.versionNameSuffix)
+                def mVersionCode = variant.mergedFlavor.versionCode + (variant.buildType.versionNameSuffix == null ? "" : variant.buildType.versionCodeSuffix)
+                def mBuildTypeName = variant.buildType == null ? "" : variant.buildType.name + "_"
+                def mProductFlavorsName = variant.productFlavors[0] == null ? "" : variant.productFlavors[0].name + "_"
+                def date = new Date().format("yyyy-MM-dd-HH:mm:ss")
+                outputFileName = "${mBuildTypeName}${mProductFlavorsName}${mApplicationId}_${mVersionCode}_v${mVersionName}_${date}.apk"
+            }
+        }
+    }
+
+    //配置资源目录
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']//指定jniLibs文件存放目录（.so文件）
+        }
+    }
+
+//
+//    task runStageDebug(type: Exec, dependsOn: 'installStageDebug') {
+//        commandLine android.getAdbExe().toString(), "shell",
+//                "monkey",
+//                "-p", "${defaultConfig.applicationId}",
+//                "-c", "android.intent.category.LAUNCHER", "1"
+//    }
+//
+//    task runStageRelease(type: Exec, dependsOn: 'installStageRelease') {
+//        commandLine android.getAdbExe().toString(), "shell",
+//                "monkey",
+//                "-p", "${defaultConfig.applicationId}",
+//                "-c", "android.intent.category.LAUNCHER", "1"
+//    }
+//
+//    task runDebug(type: Exec, dependsOn: 'installProductionDebug') {
+//        commandLine android.getAdbExe().toString(), "shell",
+//                "monkey",
+//                "-p", "${defaultConfig.applicationId}",
+//                "-c", "android.intent.category.LAUNCHER", "1"
+//    }
+//
+//    task runRelease(type: Exec, dependsOn: 'installProductionRelease') {
+//        commandLine android.getAdbExe().toString(), "shell",
+//                "monkey",
+//                "-p", "${defaultConfig.applicationId}",
+//                "-c", "android.intent.category.LAUNCHER", "1"
+//    }
+}

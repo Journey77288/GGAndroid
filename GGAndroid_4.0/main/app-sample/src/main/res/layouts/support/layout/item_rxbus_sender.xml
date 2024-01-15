@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.sample.viewmodel.support.rxbus.ItemRxBusSenderVModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp_15"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_rxbus_sender_hint"
+            android:textSize="@dimen/font_14"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@={data.input}"
+            android:theme="@style/EditTextStyle" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:onClick="@{data::actionSendMessage}"
+            android:theme="@style/ButtonStyle"
+            android:text="@string/str_rxbus_send" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sticky_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_rxbus_sticky_sender_hint"
+            android:textSize="@dimen/font_14"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/dp_60"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_sticky_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@={data.stickyInput}"
+            android:theme="@style/EditTextStyle" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sticky_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:onClick="@{data::actionSendStickyMessage}"
+            android:theme="@style/ButtonStyle"
+            android:text="@string/str_rxbus_send" />
+
+
+    </LinearLayout>
+</layout>

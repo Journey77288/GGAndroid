@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.pack.common.item.ItemSampleVModel" />
+    </data>
+
+    <io.ganguo.appcompat.layout.CornerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100"
+        android:layout_margin="@dimen/dp_10"
+        app:cornersRadius="@dimen/dp_5">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:bind_bg_res="@{data.bg}"
+            android:onClick="@{data.onClick()}"
+            android:padding="@dimen/dp_10"
+            android:text="@{data.text}"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14" />
+    </io.ganguo.appcompat.layout.CornerFrameLayout>
+</layout>

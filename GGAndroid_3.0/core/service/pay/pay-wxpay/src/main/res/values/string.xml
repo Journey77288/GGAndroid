@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_wechat_sdk_not_init">Please initialize WeChat sdk in Application!!! </string>
+    <string name="str_wechat_not_install">Please install the weChat first!!! </string>
+</resources>

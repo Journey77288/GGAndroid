@@ -1,0 +1,17 @@
+apply from: "${rootProject.projectDir}/config/appConfig.gradle"
+apply plugin: 'com.android.application'
+android {
+    defaultConfig {
+        applicationId "io.ganguo.pay.sample"
+        versionCode 1
+        versionName "1.0"
+    }
+}
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':GGControls:GGViewModel')
+    implementation project(':GGPay:pay-core')
+    implementation project(':GGPay:pay-alipay')
+    implementation project(':GGPay:pay-wxpay')
+}

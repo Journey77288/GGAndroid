@@ -1,0 +1,58 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
+configurations.all {
+    it.dependencies.all {
+        if (it instanceof ModuleDependency) {
+            excludeModule(it, 'rxjava')
+            excludeModule(it, 'design')
+            excludeModule(it, 'support-v4')
+            excludeModule(it, 'support-annotations')
+            excludeModule(it, 'retrofit')
+            excludeModule(it, 'okhttp')
+            excludeModule(it, 'appcompat-v7')
+        }
+    }
+}
+
+static def excludeModule(Dependency dependency, String moduleName) {
+    if (dependency.name != moduleName) {
+        dependency.exclude(module: moduleName)
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':core:support:utils')
+    api project(':core:service:image:image-core')
+    api libs.androidx_constrainLayout
+    api libs.androidx_core
+    api libs.androidx_annotations
+    api libs.design
+    api libs.html_textview
+
+    api libs.smart_refresh_layout
+    api libs.smart_refresh_header_classics
+    api libs.smart_refresh_header_material
+    api libs.smart_refresh_footer_classics
+    api libs.materialprogressbar
+
+    // enable multidex
+    api libs.androidx_multidex
+
+    // test
+    androidTestImplementation libs.androidx_test
+    testImplementation libs.junit
+
+    //kotlin
+    api libs.kotlin_stdlib_jdk7
+    api libs.kotlin_rx
+    api libs.kotlin_core_ktx
+
+}

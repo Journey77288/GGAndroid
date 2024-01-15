@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.ganguo.incubator">
+
+    <!-- 极光 SDK 注册了这两个权限；如果项目不需要，则可以通过 note 移除 -->
+<!--    <uses-permission-->
+<!--        android:name="android.permission.WRITE_SETTINGS"-->
+<!--        tools:ignore="ProtectedPermissions" />-->
+<!--    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- 停止使用Android 13广告编号权限, Google Play上架要求没有使用要移除 -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" />
+
+    <uses-feature android:name="android.hardware.screen.portrait" />
+
+    <application
+        android:name=".context.AppContext"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="${appLabel}${appLabelSuffix}"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Activity.NoActionbar"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label">
+
+        <!--        <activity-->
+        <!--            android:name=".view.main.SplashActivity"-->
+        <!--            android:theme="@style/Activity.Splash.Basic">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+
+        <activity android:name=".view.main.RouteActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Activity.Splash.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--  配置自定义的scheme信息  -->
+                <data
+                    android:host="incubator"
+                    android:path="/app"
+                    android:scheme="ganguo" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.main.MainActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:launchMode="singleTask"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

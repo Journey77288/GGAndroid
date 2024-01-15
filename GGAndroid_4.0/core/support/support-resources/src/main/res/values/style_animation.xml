@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--activity slide animation -->
+    <style name="Animation.Slide.Activity" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_to_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_to_right</item>
+    </style>
+
+
+    <!-- activity fade animation -->
+    <style name="Animation.Fade.Activity" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/no_animation</item>
+        <item name="android:activityCloseEnterAnimation">@anim/no_animation</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out_to_bottom</item>
+    </style>
+
+    <!-- activity fade animation -->
+    <style name="Animation.Fade.SplashActivity" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in_splash</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out_splash</item>
+    </style>
+
+
+    <!--Dialog basic animation configuration-->
+    <style name="Animation.Window.Fade" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <!--Dialog basic animation configuration-->
+    <style name="Animation.Window.Bottom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/bottom_show</item>
+        <item name="android:windowExitAnimation">@anim/bottom_hide</item>
+    </style>
+
+
+</resources>

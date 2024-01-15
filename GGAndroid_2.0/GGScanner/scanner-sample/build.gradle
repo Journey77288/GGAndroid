@@ -1,0 +1,16 @@
+apply from: "${rootProject.projectDir}/config/appConfig.gradle"
+apply plugin: 'com.android.application'
+android {
+    defaultConfig {
+        applicationId "io.scanner.sample"
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs;
+    implementation project(':GGScanner:scanner-core')
+    implementation project(':GGControls:GGRxImagePicker')
+    implementation project(':GGControls:GGViewModel')
+}

@@ -1,0 +1,23 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    defaultConfig {
+    }
+
+}
+
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.v7
+    implementation libs.google_zxing
+    implementation project(':GGControls:GGRes')
+    implementation project(':GGCore:GGUtils')
+}

@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+
+configurations.all {
+    it.dependencies.all {
+        if (it instanceof ModuleDependency) {
+            excludeModule(it, 'support-v4')
+            excludeModule(it, 'appcompat-v7')
+            excludeModule(it, 'support-annotations')
+            excludeModule(it, 'recyclerview-v7')
+        }
+    }
+}
+
+static def excludeModule(Dependency dependency, String moduleName) {
+    if (!dependency.name.equals(moduleName)) {
+        dependency.exclude(module: moduleName)
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.gson
+    implementation libs.annotations
+    implementation project(':GGCore:GGUtils')
+    testImplementation project(':GGCore:GGTest')
+}

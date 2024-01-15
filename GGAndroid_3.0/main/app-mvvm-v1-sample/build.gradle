@@ -1,0 +1,68 @@
+apply from: "${rootProject.projectDir}/gradle/config/app.gradle"
+android {
+
+
+    /**
+     * 渠道包配置
+     */
+    productFlavors {
+        /**
+         * demo 包
+         */
+        sample {
+            applicationId "io.ganguo.demo"// 正式包名
+            manifestPlaceholders = [
+                    appLabel     : "@string/app_name",
+                    UMENG_CHANNEL: name,
+                    JPUSH_PKGNAME: "io.ganguo.incubator",
+                    JPUSH_APPKEY : "fb88c4c5166c6d794837512e",
+                    JPUSH_CHANNEL: name,
+            ]
+            buildConfigField "String", "BASE_URL", '"https://api.douban.com"'
+            buildConfigField "String", "DOUBAN", '"https://api.douban.com"'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':main:app-core')
+    implementation project(':core:support:resources')
+    implementation project(':core:component:single-image-chooser')
+    implementation project(":core:component:sidebar")
+    implementation project(':core:component:scissor')
+    implementation project(':core:service:push:jpush')
+    implementation project(':core:component:switch')
+    implementation project(':core:service:image:image-picasso')
+    implementation project(':core:service:image:image-glide')
+    implementation project(':core:service:http::http-retrofit')
+    implementation project(':core:service:http::http-use')
+    implementation project(':core:support:cache')
+    implementation project(':core:service:app:update')
+    implementation project(':core:component:recyclerview-sticky-header')
+    implementation libs.avi_loading
+
+
+    // leakcanary
+    debugImplementation libs.leakcanary_android
+    // test
+    androidTestImplementation libs.androidx_test
+
+    testImplementation libs.junit
+    implementation libs.kotlin_stdlib_jdk7
+    implementation libs.kotlin_rx
+    implementation libs.kotlin_core_ktx
+
+    //object box
+    releaseImplementation libs.objectbox_android
+    debugImplementation libs.objectbox_android_objectbrowser
+}
+/**
+ * objectbox插件，必须放末尾位置，否则无法在线调试数据库
+ */
+apply plugin: 'io.objectbox'
+
+
+
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.common.ImageViewModel" />
+
+
+    </data>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:bind_bg_res="@{data.background}"
+        android:bind_drawable_xml_res="@{data.src}"
+        android:bind_image_error_placeHolder="@{data.errorHolder}"
+        android:bind_image_placeHolder="@{data.placeHolder}"
+        android:bind_image_url="@{data.url}"
+        android:bind_margin_bottom="@{data.marginBottom}"
+        android:bind_margin_left="@{data.marginLeft}"
+        android:bind_margin_right="@{data.marginRight}"
+        android:bind_margin_top="@{data.marginTop}"
+        android:bind_view_height="@{data.height}"
+        android:bind_view_width="@{data.width}"
+        android:bind_image_bitmap="@{data.bitmap}"
+        android:bind_visibility_boolean="@{data.visible}"
+        android:clickable="@{data.clickable}"
+        android:onClick="@{data.onClick()}"
+        android:paddingLeft="@{data.paddingLeft}"
+        android:paddingTop="@{data.paddingTop}"
+        android:paddingRight="@{data.paddingRight}"
+        android:paddingBottom="@{data.paddingBottom}"
+        android:scaleType="@{data.scaleType}" />
+
+
+</layout>

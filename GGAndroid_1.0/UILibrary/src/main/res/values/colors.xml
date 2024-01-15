@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="item_press">#BDBDBD</color>
+    <color name="item_press_trans">#40ffffff</color>
+    <color name="loading_color_one">#f36c60</color>
+    <color name="loading_color_two">#29b6f6</color>
+    <color name="loading_color_three">#8bc34a</color>
+</resources>

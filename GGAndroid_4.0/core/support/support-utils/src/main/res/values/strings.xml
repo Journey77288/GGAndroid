@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_address_location_error">定位异常，请重试</string>
+    <string name="str_double_pressed_exit">再按一次退出应用</string>
+</resources>

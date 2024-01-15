@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.core.viewmodel.common.component.HeaderTitleVModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:bind_background_drawable_to_view="@{data.backgroundDrawable}"
+        android:bind_enable_elevation_size="@{data.elevationSize}"
+        android:bind_enable_elevation_to_layout="@{data.enableElevation}"
+        android:bind_height_to_view="@{data.height}"
+        android:bind_margin_bottom_to_view="@{data.marginBottom}"
+        android:bind_margin_left_to_view="@{data.marginLeft}"
+        android:bind_margin_right_to_view="@{data.marginRight}"
+        android:bind_margin_top_to_view="@{data.marginTop}"
+        android:bind_padding_bottom_to_view="@{data.paddingBottom}"
+        android:bind_padding_left_to_view="@{data.paddingLeft}"
+        android:bind_padding_right_to_view="@{data.paddingRight}"
+        android:bind_padding_top_to_view="@{data.paddingTop}"
+        android:bind_visibility_to_view="@{data.visible}"
+        android:bind_width_to_view="@{data.width}"
+        android:clickable="@{data.clickable}"
+        android:enabled="@{data.enabled}"
+        tools:targetApi="lollipop">
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:bind_view_model_parent="@{data}"
+            android:bind_view_models_to_layout="@{data.centerItems}"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:bind_view_model_parent="@{data}"
+            android:bind_view_models_to_layout="@{data.leftItems}"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:bind_view_model_parent="@{data}"
+            android:bind_view_models_to_layout="@{data.rightItems}"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

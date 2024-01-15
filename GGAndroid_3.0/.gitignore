@@ -1,0 +1,69 @@
+#built application files
+*.apk
+*.ap_
+*.lock
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Eclipse project files
+.classpath
+.project
+
+# Android Studio
+*.iml
+build
+buildCacheDir
+captures/
+.gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+
+/.idea
+.idea
+.idea/compiler.xml
+.idea/misc.xml
+.idea/workspace.xml
+.idea/libraries/
+
+# Gradle Files
+/.gradle
+/.gradle/*
+#gradle.properties
+
+# Log Files
+*.log
+
+# FreeLine
+*.py
+freeline
+
+# Hugo
+ajcore.*.txt
+
+
+# Zxing && Zbar C++ 源码
+# libs中为编译后的so文件，无须提交，copy一份到需要使用的Module下即可
+GGScanner/jni-code/libs*
+# obj为编译时产生的工程文件
+GGScanner/jni-code/obj*

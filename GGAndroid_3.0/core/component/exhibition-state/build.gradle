@@ -1,0 +1,8 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+dependencies {
+    implementation libs.androidx_core
+    implementation project(':core:support:utils')
+    implementation project(':core:support:rxjava')
+    testImplementation 'junit:junit:4.12'
+}
+

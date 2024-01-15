@@ -1,0 +1,7 @@
+<resources>
+    <string name="str_downloading">%s Downloading</string>
+    <string name="str_begin_download">Start download %s</string>
+    <string name="str_download_complete">Download %s complete</string>
+    <string name="str_download_fail">Download %s fail</string>
+    <string name="str_retry">Retry</string>
+</resources>

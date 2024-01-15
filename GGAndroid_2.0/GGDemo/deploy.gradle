@@ -1,0 +1,45 @@
+apply from: "${rootProject.projectDir}/config/appConfig.gradle"
+apply plugin: 'com.android.application'
+android {
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi-v7a', 'x86_64'
+            universalApk true
+        }
+    }
+
+    defaultConfig {
+        applicationId "io.ganguo.demo"
+        versionCode 1
+        versionName "1.0"
+    }
+
+    // 多渠道
+    flavorDimensions "default"
+    productFlavors {
+        /**
+         * 后边的全都是生产环境, 一行一个渠道包
+         *
+         */
+        production { dimension "default" }
+        //xiaomi{}
+        //qihu360{}
+        //yingyongbao{}
+    }
+
+    // 为生产环境配置所有的渠道包
+    productFlavors.all { flavor ->
+        if (flavor.name != "stage") {
+            flavor.applicationId "io.ganguo.incubator"// 正式包名
+            flavor.manifestPlaceholders = [
+                    appLabel     : "@string/app_name",
+                    UMENG_CHANNEL: flavor.name,
+            ]
+            flavor.buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+            flavor.buildConfigField "String", "ONE_BASE_URL", '"http://v3.wufazhuce.com:8000/"'
+        }
+
+    }
+}

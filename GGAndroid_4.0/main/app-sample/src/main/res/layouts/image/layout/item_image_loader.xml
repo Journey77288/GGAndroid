@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.sample.viewmodel.service.image.ItemImageLoaderVModel" />
+    </data>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:bind_error_place_holder_to_image_view="@{@color/red_translucent}"
+        android:bind_place_holder_to_image_view="@{@color/green_dark_translucent}"
+        android:bind_url_to_image_view="@{data.imageUrl}"
+        android:scaleType="centerCrop" />
+</layout>

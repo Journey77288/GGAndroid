@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="g_image_loader_uri">g_image_loader_uri</string>
+    <string name="g_convert_view">g_convert_view</string>
+</resources>

@@ -1,0 +1,21 @@
+//app签名文件配置，统一管理
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        //甘果默认测试签名文件
+        ganguo_dev {
+            storeFile file("${rootProject.projectDir}/config/keystore/ganguo_dev.jks")
+            storePassword "120521"
+            keyAlias "ganguo_dev"
+            keyPassword "120521"
+        }
+        //正式包签名文件
+        rekall {
+            keyPassword 'rekall'
+            storeFile file("${rootProject.projectDir}/config/keystore/rekall_extramessage.jks")
+            storePassword 'rekall'
+            keyAlias 'extramessage'
+        }
+    }
+}

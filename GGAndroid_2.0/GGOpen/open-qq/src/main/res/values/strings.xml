@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">qq</string>
+    <string name="qq_login_fail">QQ登录失败</string>
+</resources>

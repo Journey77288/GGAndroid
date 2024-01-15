@@ -1,0 +1,23 @@
+//可运行的Project
+include ':app', ':GGDemo';
+
+//GGCore下Module
+include ':GGCore:GGLib', ':GGCore:GGUtils', ':GGCore:GGRxQiniu',
+        ':GGCore:GGTest', ':GGCore:GGCache', ':GGCore:GGHttp',
+        ':GGCore:GGRxJava', ':GGCore:GGVMCore';
+
+//GGControls 下Module
+include ':GGControls:GGRes', ':GGControls:GGViewModel', ':GGControls:GGRxImagePicker',
+        ':GGControls:GGTab', ':GGControls:GGBanner';
+
+//支付相关的Module
+include ':GGPay:pay-sample', ':GGPay:pay-core', ':GGPay:pay-alipay', ':GGPay:pay-wxpay';
+
+//分享、登录相关的 Module
+include ':GGOpen:open-sample', ':GGOpen:open-wechat', ':GGOpen:open-core', ':GGOpen:open-qq',
+        ':GGOpen:open-sina', ':GGOpen:open-google', ':GGOpen:open-facebook', ':GGOpen:open-twitter',
+        ':GGOpen:open-line';
+
+//扫描相关的 Module
+include ':GGScanner:scanner-sample', ':GGScanner:scanner-core'
+

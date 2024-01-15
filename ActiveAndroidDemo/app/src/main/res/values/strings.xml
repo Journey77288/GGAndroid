@@ -1,0 +1,5 @@
+<resources>
+    <string name="m_app_name">ActiveAndroidDemo</string>
+    <string name="m_app_name_stage">ActiveAndroidDemo_s</string>
+    <string name="m_action_settings">Settings</string>
+</resources>

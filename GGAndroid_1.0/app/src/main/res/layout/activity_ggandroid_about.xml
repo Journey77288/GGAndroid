@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/bg_title"
+        android:orientation="horizontal">
+
+        <ui.Button
+            android:id="@+id/action_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_title_selector"
+            android:padding="@dimen/title_buttonSpacing"
+            android:text="Back"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/title_font"
+            ui:effectType="center" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="About"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/title_font_big" />
+
+        <ui.Button
+            android:id="@+id/btn_titleRight"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_title_selector"
+            android:padding="@dimen/title_buttonSpacing"
+            android:text="About"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/title_font"
+            android:visibility="gone"
+            ui:effectType="center" />
+
+
+    </RelativeLayout>
+
+    <ui.Button
+        android:id="@+id/btn_package_id"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:text="Package:"
+        android:textAllCaps="false" />
+
+    <ui.Button
+        android:id="@+id/btn_version"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:text="Version:"
+        android:textAllCaps="false" />
+
+    <ui.Button
+        android:id="@+id/btn_dev_mode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:text="DEV_MODE:"
+        android:textAllCaps="false" />
+
+    <ui.Button
+        android:id="@+id/btn_base_url"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:text="Base_URL:"
+        android:textAllCaps="false" />
+
+
+</LinearLayout>

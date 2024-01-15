@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E53935</color>
+    <color name="colorAccent">#E53935</color>
+    <color name="colorPrimaryDark">#E53935</color>
+
+    <color name="button_press">#80CCCCCC</color>
+    <color name="ripple_light">#40FFFFFF</color>
+
+    <color name="refresh_one">#f75a53</color>
+    <color name="refresh_two">#E53935</color>
+    <color name="refresh_three">#B71C1C</color>
+    <color name="loading_image">#80CCCCCC</color>
+
+    <color name="color_333333">#333333</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_37DDDADA">#37DDDADA</color>
+    <color name="color_F5F5F5">#F5F5F5</color>
+    <color name="color_4cd964">#4cd964</color>
+    <color name="color_e3e3e3">#E3E3E3</color>
+</resources>

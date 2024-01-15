@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_permission_request_hint">Permission Request</string>
+    <string name="str_permission_request_accept">OK</string>
+    <string name="str_permission_request_reject">Cancel</string>
+</resources>

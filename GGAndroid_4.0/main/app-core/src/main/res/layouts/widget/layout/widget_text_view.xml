@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.core.viewmodel.common.widget.TextViewModel" />
+
+        <import type="android.util.TypedValue" />
+    </data>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:bind_background_drawable_to_view="@{data.backgroundDrawable}"
+        android:bind_color_state_list_to_text_view="@{data.textColor}"
+        android:bind_drawable_bottom_to_text_view="@{data.drawableBottom}"
+        android:bind_drawable_left_to_text_view="@{data.drawableLeft}"
+        android:bind_drawable_right_to_text_view="@{data.drawableRight}"
+        android:bind_drawable_top_to_text_view="@{data.drawableTop}"
+        android:bind_height_to_view="@{data.height}"
+        android:bind_margin_bottom_to_view="@{data.marginBottom}"
+        android:bind_margin_left_to_view="@{data.marginLeft}"
+        android:bind_margin_right_to_view="@{data.marginRight}"
+        android:bind_margin_top_to_view="@{data.marginTop}"
+        android:bind_padding_bottom_to_view="@{data.paddingBottom}"
+        android:bind_padding_left_to_view="@{data.paddingLeft}"
+        android:bind_padding_right_to_view="@{data.paddingRight}"
+        android:bind_padding_top_to_view="@{data.paddingTop}"
+        android:bind_text_size_to_text_view="@{data.textSize}"
+        android:bind_text_size_unit_to_text_view="@{TypedValue.COMPLEX_UNIT_PX}"
+        android:bind_typeface_to_text_view="@{data.typeface}"
+        android:bind_visibility_to_view="@{data.visible}"
+        android:bind_width_to_view="@{data.width}"
+        android:clickable="@{data.clickable}"
+        android:drawablePadding="@{data.drawablePadding}"
+        android:ellipsize="@{data.ellipsize}"
+        android:enabled="@{data.enabled}"
+        android:gravity="@{data.gravity}"
+        android:hint="@{data.hint}"
+        android:maxLength="@{data.maxLength}"
+        android:maxLines="@{data.maxLines}"
+        android:onClick="@{data.actionClick()}"
+        android:singleLine="@{data.singleLine}"
+        android:text="@{data.text}" />
+</layout>

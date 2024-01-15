@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.adapter.RecyclerBindingAdapter" />
+
+        <variable
+            name="vh"
+            type="io.ganguo.adapter.hodler.ItemViewHolder" />
+
+
+        <variable
+            name="adapter"
+            type="io.ganguo.adapter.RecyclerBindingAdapter" />
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+</layout>

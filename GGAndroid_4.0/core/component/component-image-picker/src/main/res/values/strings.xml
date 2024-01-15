@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bucket_name_all">All Media</string>
+    <string name="bucket_empty">No media yet</string>
+    <string name="photo_grid_capture">Camera</string>
+    <string name="button_preview">Preview</string>
+    <string name="button_apply_default">Apply</string>
+    <string name="button_apply">Apply(%1$d)</string>
+    <string name="button_back">Back</string>
+    <string name="camera_permission_request">Request camera permission to capture</string>
+    <string name="str_require_video_record_permission">Recording Permission Instructions</string>
+    <string name="str_require_video_record_permission_hint">Used to access the system camera, record video to be uploaded</string>
+    <string name="str_require_video_record_denied_hint">Unable to obtain video recording permission, please go to App Settings - Permission Management to allow camera and microphone permissions</string>
+    <string name="str_require_media_denied_hint">Unable to obtain storage permission, please go to application settings - permission management to allow storage permission</string>
+    <string name="str_require_camera_permission">Using Camera Permissions Instructions</string>
+    <string name="str_require_camera_permission_hint">Used to access the system camera and take pictures to be uploaded</string>
+    <string name="str_require_camera_denied_hint">Unable to obtain camera permissions, please go to application settings - permission management to allow camera and storage permissions</string>
+</resources>

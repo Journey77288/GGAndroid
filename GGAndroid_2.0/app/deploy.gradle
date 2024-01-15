@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.fernandocejas.frodo'
+
+//Frodo调试RxJava和RxAndroidF配置
+frodo {
+    enabled = true
+}
+
+android {
+    defaultConfig {
+        //正在的包名和版本配置在productFlavors配置中
+        applicationId "io.ganguo.incubator"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+    // 多渠道
+    productFlavors {
+        /**
+         * 测试服务器
+         */
+        stage {
+            versionCode 1
+            versionName "1.0"
+            applicationId "io.ganguo.incubator.stage"// 测试包名
+            manifestPlaceholders = [
+                    appLabel     : "@string/app_name_stage",
+                    UMENG_CHANNEL: "stage",
+            ]
+            buildConfigField "String", "ENVIRONMENT", '"甘果测试环境"'
+            buildConfigField "String", "PACKAGING_TIME", "\"${packagingTime(true)}\""
+            buildConfigField "boolean", "isStage", "true"
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+            buildConfigField "String", "DATA_PATH", '"GGLib"'
+
+            // 分享相关key配置
+            buildConfigField "String", "WECHAT_APP_ID", '"wxa472802468274e0c"'
+            buildConfigField "String", "WECHAT_APP_SECRET", '"ab64c5fa0c097bd74b86b43f0c9955d7"'
+            buildConfigField "String", "QQ_APP_ID", '"1105300508"'
+            buildConfigField "String", "ALIPAY_APP_KEY", '"2016033001253029"'
+            buildConfigField "String", "SINA_APP_KEY", '"1347326661"'
+            buildConfigField "String", "SINA_REDIRECT_URL", '"http://www.baidu.com"'
+            buildConfigField "String", "SINA_SCOPE", '"email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"'
+        }
+        /**
+         * 后边的全都是生产环境, 一行一个渠道包
+         *
+         */
+        production { dimension "default" }
+        //xiaomi{}
+        //qihu360{}
+        //yingyongbao{}
+    }
+
+    // 为生产环境配置所有的渠道包
+    productFlavors.all { flavor ->
+        if (flavor.name != "stage") {
+            flavor.applicationId "com.rekall.extramessage"// 正式包名
+            flavor.versionCode 1
+            flavor.versionName "1.0"
+            flavor.manifestPlaceholders = [
+                    appLabel     : "@string/app_name",
+                    UMENG_CHANNEL: flavor.name,
+            ]
+            flavor.buildConfigField "String", "ENVIRONMENT", '"生产环境"'
+            flavor.buildConfigField "String", "PACKAGING_TIME", "\"${packagingTime(false)}\""
+            flavor.buildConfigField "boolean", "isStage", "false"
+            flavor.buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+            flavor.buildConfigField "String", "DATA_PATH", '"GGLib"'
+
+            // 分享相关key配置
+            flavor.buildConfigField "String", "WECHAT_APP_ID", '"wxa472802468274e0c"'
+            flavor.buildConfigField "String", "WECHAT_APP_SECRET", '"ab64c5fa0c097bd74b86b43f0c9955d7"'
+            flavor.buildConfigField "String", "QQ_APP_ID", '"1105300508"'
+            flavor.buildConfigField "String", "ALIPAY_APP_KEY", '"2016033001253029"'
+            flavor.buildConfigField "String", "SINA_APP_KEY", '"1347326661"'
+            flavor.buildConfigField "String", "SINA_REDIRECT_URL", '"http://www.baidu.com"'
+            flavor.buildConfigField "String", "SINA_SCOPE", '"email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"'
+
+        }
+
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res-main']
+        }
+    }
+
+}
+
+//得到打包时间
+static String packagingTime(Boolean isTest) {
+    if (isTest != null && isTest.booleanValue()) {
+        return new Date().format("yyyy-MM-dd HH:mm:ss").toString()
+    }
+    return ""
+
+}

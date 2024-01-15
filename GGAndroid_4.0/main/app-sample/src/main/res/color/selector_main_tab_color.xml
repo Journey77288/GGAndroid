@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
+    <item android:color="#ef0e58" android:state_selected="true" />
+    <item android:color="#ef0e58" android:state_pressed="true" />
+    <item android:color="#121313" android:state_selected="false" />
+    <item android:color="#121313" />
+</selector>

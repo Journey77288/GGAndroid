@@ -1,0 +1,18 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['jniLibs']
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.v4
+    implementation libs.v7
+    implementation project(':GGCore:GGUtils')
+    testImplementation project(':GGCore:GGTest')
+}

@@ -1,0 +1,72 @@
+include ':main:app'
+include ':main:app-core'
+include ':main:app-mvvm-v1-sample'
+include ':main:app-open-sample'
+include ':main:app-pay-sample'
+include ':main:app-scanner-sample'
+
+
+//http module
+include ':core:service:http:http-core'
+include ':core:service:http:http-retrofit'
+include ':core:service:http:http-use'
+
+//open sdk
+include ':core:service:open:open-alipay'
+include ':core:service:open:open-core'
+include ':core:service:open:open-facebook'
+include ':core:service:open:open-google'
+include ':core:service:open:open-line'
+include ':core:service:open:open-qq'
+include ':core:service:open:open-sina'
+include ':core:service:open:open-twitter'
+include ':core:service:open:open-wechat'
+
+//app update sdk
+include ':core:service:app:update'
+
+//pay sdk
+include ':core:service:pay:pay-alipay'
+include ':core:service:pay:pay-core'
+include ':core:service:pay:pay-wxpay'
+
+//logger module
+include ':core:service:logger:logger-core'
+include ':core:service:logger:logger-gg'
+
+//image module
+include ':core:service:image:image-core'
+include ':core:service:image:image-glide'
+include ':core:service:image:image-picasso'
+
+//push module
+include ':core:service:push:jpush'
+
+
+//support module
+include ':core:support:utils'
+include ':core:support:factory'
+include ':core:support:cache'
+include ':core:support:core'
+include ':core:support:rxjava'
+include ':core:support:resources'
+include ':core:support:recyclerview-adapter'
+
+//component
+include ':core:component:exhibition-state'
+include ':core:component:scanner'
+include ':core:component:single-image-chooser'
+include ':core:component:tab'
+include ':core:component:banner'
+include ':core:component:scissor'
+include ':core:component:sidebar'
+include ':core:component:switch'
+include ':core:component:tab'
+include ':core:component:recyclerview-sticky-header'
+
+//component
+include ':core:widget:appcompat'
+
+//frame
+include ':core:frame:mvvm-v1'
+include ':core:support:lifecycle'

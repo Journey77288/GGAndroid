@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  api error hint  -->
+    <string name="str_client_request_failure">Request error</string>
+    <string name="str_server_response_failure">Server error</string>
+    <string name="str_network_anomaly">Network error</string>
+</resources>

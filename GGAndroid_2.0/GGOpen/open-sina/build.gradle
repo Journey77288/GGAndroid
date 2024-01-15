@@ -1,0 +1,25 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+repositories {
+    flatDir {
+        dirs("libs")
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':GGCore:GGUtils')
+    api libs.sina_sdk
+    api project(':GGOpen:open-core')
+}

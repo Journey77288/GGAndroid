@@ -1,0 +1,52 @@
+apply from: "${rootProject.projectDir}/gradle/config/app.gradle"
+
+android {
+
+    productFlavors {
+        /**
+         * Demo包
+         */
+        sample {
+            applicationId "io.ganguo.open"// 测试包名
+            manifestPlaceholders = [
+                    appLabel           : "@string/app_name",
+                    UMENG_CHANNEL      : "stage",
+                    FACEBOOK_APP_ID    : '"312638299325242"',
+                    FACEBOOK_APP_SCHEME: "fb312638299325242",
+                    QQ_APP_ID          : "101763058",
+                    WECHAT_APP_ID      : "wx544e1226f9251aec"
+            ]
+            buildConfigField "boolean", "isStage", "true"
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+
+            // 分享相关key配置
+            buildConfigField "String", "WECHAT_APP_ID", '"wx544e1226f9251aec"'
+            buildConfigField "String", "WECHAT_APP_SECRET", '"7bead34c59d2796e2329db9e9c0f6e0a"'
+            buildConfigField "String", "QQ_APP_ID", '"101763058"'
+            buildConfigField "String", "ALIPAY_APP_KEY", '"2017022705935843"'
+            buildConfigField "String", "SINA_APP_KEY", '"1350719244"'
+            buildConfigField "String", "SINA_REDIRECT_URL", '"http://www.baidu.com"'
+            buildConfigField "String", "SINA_SCOPE", '"email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"'
+            buildConfigField "String", "FACEBOOK_APP_ID", '"276644269728239dfd"'
+            buildConfigField "String", "TWITTER_API_KEY ", '"xGKv0T9aUHcNq8Ua7zYijfR3p"'
+            buildConfigField "String", "TWITTER_API_SECRET_KEY ", '"7OVzTEFGjQZhVsxsUO2449AUxioJ73DeZFgT56CfUgF8D7gdPv"'
+            buildConfigField "String", "LINE_CHANNEL_ID", '"1620158986"'
+        }
+
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation project(':core:service:open:open-wechat')
+    implementation project(':core:service:open:open-qq')
+    implementation project(':core:service:open:open-core')
+    implementation project(':core:service:open:open-sina')
+    implementation project(":core:service:open:open-google")
+    implementation project(":core:service:open:open-facebook")
+    implementation project(":core:service:open:open-twitter")
+    implementation project(":core:service:open:open-line")
+    implementation project(":core:service:open:open-alipay")
+    implementation project(':core:frame:mvvm-v1')
+    implementation project(':core:component:single-image-chooser')
+    implementation project(':core:service:image:image-glide')
+}

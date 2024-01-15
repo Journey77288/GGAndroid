@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.ganguo.twitter">
+
+    <application>
+
+    </application>
+    <!--  适配Android11包可见度  -->
+    <queries>
+        <!-- Twitter SDK -->
+        <package android:name="com.twitter.android" />
+    </queries>
+</manifest>

@@ -1,0 +1,8 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api libs.google_play_services_auth
+    api libs.firebase_core
+    api project(':core:service:open:open-core')
+}

@@ -1,0 +1,11 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+dependencies {
+    implementation libs.support_compat
+    implementation libs.rxandroid
+    implementation libs.rxjava
+    implementation project(':GGCore:GGUtils')
+    testImplementation 'junit:junit:4.12'
+}
+

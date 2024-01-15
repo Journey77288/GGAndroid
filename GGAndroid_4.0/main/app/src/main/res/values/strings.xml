@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name_alpha">alpha_GGApp</string>
+    <string name="app_name_beta">beta_GGApp</string>
+    <string name="app_name_preview">pre_GGApp</string>
+    <string name="app_name_production">GGApp</string>
+    <string name="app_name_alpha_dev">alpha_GGApp_dev</string>
+    <string name="app_name_beta_dev">beta_GGApp_dev</string>
+    <string name="app_name_preview_dev">pre_GGApp_dev</string>
+    <string name="app_name_production_dev">GGApp_dev</string>
+
+    <!--system info-->
+    <string name="str_app_package_info">以下为打包信息，仅仅用于开发阶段测试反馈</string>
+    <string name="str_app_packaging_apk_info">Apk详情</string>
+    <string name="str_app_device_model">设备型号：%s</string>
+    <string name="str_app_flavors_mode">版本类型：%s</string>
+    <string name="str_app_version_name">版本名称：%s</string>
+    <string name="str_app_version_code">版本号：%s</string>
+    <string name="str_app_packaging_environment">打包环境：%s</string>
+    <string name="str_app_packaging_base_url">BaseUrl：%s</string>
+    <string name="str_app_package_name">包名：%s</string>
+    <string name="str_app_version_sdk">设备SDK版本：%s</string>
+    <string name="str_app_sys_version">系统版本：%s</string>
+
+    <!--字符串资源命名规范：直接以str_module_name规范进行(module为模块名称，name为字符串名称`过长可以用简单的缩写`)命名，方便使用时查找，示例：str_home_title-->
+    <!--不同页面、模块间字符串不进行复用，避免后期修改导致连锁反应。示例：str_home_user_name，str_mine_user_name-->
+
+    <!--  首页模块  -->
+    <string name="str_home_title">首页标题</string>
+    <string name="str_home_user_name">用户名称</string>
+
+
+    <!--  我的模块  -->
+    <string name="str_mine_title">我的</string>
+    <string name="str_mine_user_name">用户名称</string>
+</resources>

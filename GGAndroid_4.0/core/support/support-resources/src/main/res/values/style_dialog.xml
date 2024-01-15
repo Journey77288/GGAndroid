@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Loading dialog mmersion animation configuration -->
+    <style name="Dialog.Immersion" parent="Dialog">
+        <item name="android:windowAnimationStyle">@style/Animation.Window.Fade</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!-- Loading dialog basic animation configuration -->
+    <style name="Dialog.Loading" parent="Dialog.Immersion"></style>
+
+    <!-- Permission hint dialog mmersion animation configuration -->
+    <style name="Dialog.Permission" parent="Dialog">
+        <item name="android:windowAnimationStyle">@style/Animation.Window.Fade</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!-- Bottom Animation Dialog Base  -->
+    <style name="Dialog"></style>
+    <!-- Bottom Animation Dialog Style  -->
+    <style name="Dialog.Bottom" parent="Dialog">
+        <item name="android:windowAnimationStyle">@style/Animation.Window.Bottom</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+
+</resources>

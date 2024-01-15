@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.pack.common.HeaderViewModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:bind_bg_res="@{data.background}"
+        android:bind_enable_elevation_to_layout="@{data.enableHeaderElevation}"
+        android:bind_visibility_boolean="@{data.headerVisible}"
+        android:elevation="@dimen/dp_4"
+        tools:targetApi="lollipop">
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:bind_view_model_list_to_layout="@{data.getCenterItems}"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/lly_item_container_center"
+            android:bind_view_model_list_to_layout="@{data.getLeftItems}"
+            android:descendantFocusability="afterDescendants"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/lly_item_container_center"
+            android:bind_view_model_list_to_layout="@{data.getRightItems}"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.ganguo.incubator">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 友盟渠道名 value请参照app/build.gradle -->
+    <meta-data
+        android:name="UMENG_CHANNEL"
+        android:value="${UMENG_CHANNEL_VALUE}" />
+
+    <application
+        android:name="io.ganguo.incubator.AppContext"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="${appLabel}"
+        android:theme="@style/Theme.Me"
+        tools:replace="android:label">
+        <activity
+            android:name="io.ganguo.incubator.ui.activity.MainActivity"
+            android:label="${appLabel}">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.LoginActivity" />
+
+        <activity android:name=".ui.activity.AboutActivity" />
+
+    </application>
+
+</manifest>

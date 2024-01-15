@@ -1,0 +1,9 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api libs.facebook_core
+    api libs.facebook_login
+    api libs.facebook_share
+    api project(':core:service:open:open-core')
+}

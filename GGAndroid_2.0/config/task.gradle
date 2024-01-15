@@ -1,0 +1,14 @@
+//删除编译时生成的apk，执行./gradlew deleteOutPutsApk
+task deleteOutputsApk(type: Delete) {
+    delete "${rootProject.projectDir}/app/build/outputs/apk"
+}
+
+//用于查看依赖树，执行./gradlew allDeps 即可查看全部依赖关系
+subprojects {
+    task allDeps(type: DependencyReportTask) {}
+}
+
+// 预定义的gradle版本号
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.9'
+}

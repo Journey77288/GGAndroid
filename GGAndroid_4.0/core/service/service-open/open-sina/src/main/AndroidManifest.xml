@@ -1,0 +1,9 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.ganguo.sina">
+    <!--  适配Android11包可见度  -->
+    <queries>
+        <!-- Sina SDK -->
+        <package android:name="com.sina.weibo" />
+    </queries>
+</manifest>

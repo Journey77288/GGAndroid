@@ -1,0 +1,18 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+
+android {
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':core:support:utils')
+    api project(":core:service:image:image-core")
+    api libs.picasso
+    api libs.picasso_transformations
+    api libs.gpuimage_library
+}

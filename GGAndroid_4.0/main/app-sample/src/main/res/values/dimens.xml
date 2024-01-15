@@ -1,0 +1,5 @@
+<resources>
+    <!--命名规范-->
+    <!--dp+功能名称，例如：dp_fab_margin-->
+    <!--px+功能名称，例如：px_tab_height-->
+</resources>

@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.ganguo.wechat">
+
+    <application>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- Wechat APP ID -->
+                <data android:scheme="wxb20d1813d530893c" />
+            </intent-filter>
+        </activity>
+        <activity-alias
+            android:name="${applicationId}.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:targetActivity="io.ganguo.wechat.wxapi.WXEntryActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="${WECHAT_APP_ID}" />
+            </intent-filter>
+        </activity-alias>
+    </application>
+</manifest>

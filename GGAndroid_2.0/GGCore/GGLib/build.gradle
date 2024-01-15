@@ -1,0 +1,58 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
+configurations.all {
+    it.dependencies.all {
+        if (it instanceof ModuleDependency) {
+            excludeModule(it, 'rxjava')
+            excludeModule(it, 'design')
+            excludeModule(it, 'support-v4')
+            excludeModule(it, 'support-annotations')
+            excludeModule(it, 'retrofit')
+            excludeModule(it, 'okhttp')
+            excludeModule(it, 'appcompat-v7')
+        }
+    }
+}
+
+static def excludeModule(Dependency dependency, String moduleName) {
+    if (dependency.name != moduleName) {
+        dependency.exclude(module: moduleName)
+    }
+}
+
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs;
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':GGCore:GGUtils')
+    implementation libs.rxandroid
+    implementation libs.rxjava
+    api libs.constrainLayout
+    api libs.v7
+    api libs.v4
+    api libs.support_compat
+    api libs.annotations
+    api libs.design
+
+    api libs.picasso
+    api libs.picasso_transformations
+    api libs.gpuimage_library
+
+    androidTestImplementation(libs.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    // enable multidex
+    api libs.multidex
+
+    // test
+    androidTestImplementation libs.support_test
+    testImplementation project(':GGCore:GGTest')
+    testImplementation libs.junit
+}

@@ -1,0 +1,32 @@
+apply from: "${rootProject.projectDir}/gradle/config/app.gradle"
+
+android {
+
+    productFlavors {
+        /**
+         * demo 包
+         */
+        sample {
+            applicationId "io.ganguo.pay"// 测试包名
+            manifestPlaceholders = [
+                    appLabel     : "@string/app_name",
+                    WECHAT_APP_ID: "wx544e1226f9251aec"
+            ]
+            buildConfigField "boolean", "isStage", "true"
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+
+            // 分享相关key配置
+            buildConfigField "String", "WECHAT_APP_ID", '"wx544e1226f9251aec"'
+            buildConfigField "String", "WECHAT_APP_SECRET", '"7bead34c59d2796e2329db9e9c0f6e0a"'
+            buildConfigField "String", "ALIPAY_APP_KEY", '"2017022705935843"'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':core:frame:mvvm-v1')
+    implementation project(':core:service:pay:pay-core')
+    implementation project(':core:service:pay:pay-alipay')
+    implementation project(':core:service:pay:pay-wxpay')
+}

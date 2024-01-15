@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">GGAndroid</string>
+
+    <!--运动类型 数组-->
+    <string-array name="sports">
+        <item>Football</item>
+        <item>Basketball</item>
+        <item>Billiards</item>
+        <item>Badminton</item>
+        <item>Table tennis</item>
+        <item>Running</item>
+        <item>Push-ups</item>
+        <item>Pull-up</item>
+        <item>Tennis</item>
+        <item>Yoga </item>
+        <item> swim</item>
+        <item>足球</item>
+    </string-array>
+
+    <!--  首页菜单  -->
+    <string name="str_home_database_kotlin">Database kotlin Version demo</string>
+    <string name="str_home_database_java">Database java Version demo</string>
+    <string name="str_home_refresh_load_more">Refresh and LoadMore</string>
+    <string name="str_home_rx_bus">RxBus</string>
+    <string name="str_home_dialog">Dialog</string>
+    <string name="str_home_http_chuck">Api Caught debugging</string>
+    <string name="str_home_http">Http Demo</string>
+    <string name="str_home_folding_linkage">CoordinatorAppBarVModel Demo</string>
+    <string name="str_home_folding_linkage_toolbar">CollapsingToolbarViewModel Demo</string>
+    <string name="str_home_banner">BannerViewModel Demo</string>
+    <string name="str_home_diff_util">DiffUtil Demo</string>
+    <string name="str_home_webView">WebView Demo</string>
+    <string name="str_home_gallery">ViewPager Gallery</string>
+    <string name="str_home_rx_activity_result">RxActivityResult Demo</string>
+    <string name="str_home_tab_layout">TabLayout ViewModel</string>
+    <string name="str_home_rx_java">RxJava Demo</string>
+    <string name="str_home_select_manager">Select Manager</string>
+    <string name="str_home_permission">Get Permission Demo</string>
+    <string name="str_home_camera">Open Camera Demo</string>
+    <string name="str_home_photo">Open Gallery Demo</string>
+    <string name="str_home_sidebar">SideBar Demo</string>
+    <string name="str_home_lazy_load">LazyHelper Demo</string>
+    <string name="str_home_loading_helper">LoadingHelper Demo</string>
+    <string name="str_home_text_load_html">TextView Load Html Demo</string>
+    <string name="str_home_crop_photo">Photo Crop Demo</string>
+    <string name="str_home_keyboard_state">KeyBoard State Listener</string>
+    <string name="str_home_save_view_2_photo">Save View to Photo</string>
+    <string name="str_home_push">JPush</string>
+    <string name="str_home_switch_btn">Switch Button</string>
+    <string name="str_home_page_state_helper">PageStateHelper Demo</string>
+    <string name="str_home_have_no_legal_power">have no legal power</string>
+    <string name="str_home_get_permissions_success">Permissions obtained successfully</string>
+    <string name="str_home_access_failed">Access failed</string>
+    <string name="str_home_app_update">app version update</string>
+
+    <!--推送-->
+    <string name="str_cancel">Cancel</string>
+    <string name="str_confirm">Confirm</string>
+    <string name="str_push_count">Received push quantity:</string>
+    <string name="str_push_test_account">Please check the test account at xx Trello 甘果-Android</string>
+    <string name="str_push_delete_alias">delete alias：</string>
+    <string name="str_push_setting_alias">set alias:</string>
+    <string name="str_push_setting_alias_ing">Setting aliases</string>
+    <string name="str_push_setting_alias_success">Set alias successfully</string>
+    <string name="str_push_delete_alias_ing">Deleting aliases</string>
+    <string name="str_push_delete_alias_success">Aliasing removed successfully</string>
+
+    <!--语言-->
+    <string name="str_language_switch">Switch Language</string>
+    <string name="str_language_chinese">chinese</string>
+    <string name="str_language_english">english</string>
+    <string name="str_language_is_already">Is already the locale</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--只有xml里的第一个http://schemas.android.com/apk/res-auto可以联想-->
+    <!--如:-->
+    <!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:bind="http://schemas.android.com/apk/res-auto" >-->
+    <!--只有app能联想以下属性-->
+    <!--可以联想后把app改为bind,避免与第三方控件的自定义属性冲突-->
+
+    <declare-styleable name="TextView">
+        <attr name="sizeUnit" format="integer" />
+        <attr name="afterTextChanged" format="reference" />
+        <attr name="beforeTextChanged" format="reference" />
+        <attr name="onTextChanged" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="EditText">
+        <attr name="isPswVisible" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewGroup">
+        <!-- require {@link Collection<BaseViewModel>}-->
+        <attr name="appendViewList" format="reference" />
+        <!-- require {@link BaseViewModel}-->
+        <attr name="appendView" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="RecyclerView">
+        <!-- require {@link ViewModelAdapter}-->
+        <attr name="initAdapter" format="reference" />
+        <!-- require {@link RecyclerView.LayoutManager}-->
+        <attr name="initLayoutManager" format="reference" />
+        <!-- require {@link RecyclerView.ItemDecoration}-->
+        <attr name="itemDecoration" format="reference" />
+        <attr name="overScroll" format="boolean" />
+    </declare-styleable>
+
+</resources>

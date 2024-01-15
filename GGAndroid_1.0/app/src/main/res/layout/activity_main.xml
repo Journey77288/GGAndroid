@@ -1,0 +1,76 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.v4.widget.SlidingPaneLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_280"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <include layout="@layout/include_navigation" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_title"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:background="@color/bg_title"
+                android:orientation="horizontal">
+
+                <ui.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/button_title_selector"
+                    android:padding="@dimen/title_buttonSpacing"
+                    android:text="Back"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/title_font"
+                    ui:effectType="center" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="MainTitle"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/title_font_big" />
+
+                <ui.Button
+                    android:id="@+id/btn_titleRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/button_title_selector"
+                    android:padding="@dimen/title_buttonSpacing"
+                    android:text="About"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/title_font"
+                    ui:effectType="center" />
+
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/fly_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false" />
+
+        </LinearLayout>
+    </android.support.v4.widget.SlidingPaneLayout>
+</FrameLayout>

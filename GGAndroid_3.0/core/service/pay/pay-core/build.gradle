@@ -1,0 +1,5 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':core:support:factory')
+}

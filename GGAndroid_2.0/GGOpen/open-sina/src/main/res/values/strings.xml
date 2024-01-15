@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">sina</string>
+    <string name="str_accessToken_is_null">AccessToken is null</string>
+    <string name="str_uid_is_null">Uid is null</string>
+    <string name="str_auth_failure">Auth failure</string>
+</resources>

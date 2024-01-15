@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.sample.viewmodel.widget.switch_button.ItemSwitchIOSButtonVModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <io.ganguo.switch_button.SwitchIOSButton
+            android:id="@+id/sw_ios1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/dp_20"
+            app:isEnableThumbShadow="true"
+            app:isOpen="true"
+            app:thumbBgShadowColor="@color/black"
+            app:thumbOnBgColor="@color/white"
+            app:thumbRadius="@dimen/dp_14"
+            app:trackHeight="@dimen/dp_31"
+            app:trackOffBgColor="@color/color_e3e3e3"
+            app:trackOffTransitBgColor="@color/gray_dark"
+            app:trackOnBgStartColor="@color/color_4cd964"
+            app:trackOnBgEndColor="@color/color_4cd964"
+            app:trackWidth="@dimen/dp_51" />
+
+        <io.ganguo.switch_button.SwitchIOSButton
+            android:id="@+id/sw_ios2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_20"
+            app:iosLeftLineColor="@color/white"
+            app:iosLeftLineShow="true"
+            app:iosRightCircleColor="@color/gray_dark"
+            app:iosRightCircleShow="true"
+            app:isEnableThumbShadow="false"
+            app:thumbBgShadowColor="@color/black"
+            app:thumbOnBgColor="@color/white"
+            app:thumbRadius="@dimen/dp_14"
+            app:trackHeight="@dimen/dp_31"
+            app:trackOffBgColor="@color/color_e3e3e3"
+            app:trackOffTransitBgColor="@color/gray_dark"
+            app:trackOnBgStartColor="@color/color_4cd964"
+            app:trackOnBgEndColor="@color/color_4cd964"
+            app:trackWidth="@dimen/dp_51" />
+
+
+        <io.ganguo.switch_button.SwitchButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_20"
+            app:isEnableThumbShadow="true"
+            app:thumbBgShadowColor="@color/color_7b7b7b"
+            app:thumbOffBgColor="@color/gray_dark"
+            app:thumbOnBgColor="@color/green_translucent"
+            app:thumbRadius="@dimen/dp_12"
+            app:thumbShadowDx="8"
+            app:thumbShadowDy="15"
+            app:trackHeight="@dimen/dp_16"
+            app:trackOffBgColor="@color/gray_dark_translucent"
+            app:trackOffTransitBgColor="@color/color_7b7b7b"
+            app:trackOnBgStartColor="@color/green_light"
+            app:trackOnBgEndColor="@color/color_4cd964"
+            app:trackWidth="@dimen/dp_40" />
+    </LinearLayout>
+</layout>

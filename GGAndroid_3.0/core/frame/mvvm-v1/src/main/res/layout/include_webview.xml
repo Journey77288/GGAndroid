@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.pack.common.base.BaseWebViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fl_web"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+
+        <FrameLayout
+            android:id="@+id/fl_center_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:bind_visibility_boolean="@{data.isShowCenterLoading}" />
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/mp_horizontal_bar"
+            style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_2"
+            android:layout_gravity="top"
+            android:bind_visibility_boolean="@{data.isShowHorizontalBar}"
+            android:indeterminate="false"
+            app:mpb_useIntrinsicPadding="false"
+            app:mpb_progressStyle="horizontal" />
+    </FrameLayout>
+</layout>

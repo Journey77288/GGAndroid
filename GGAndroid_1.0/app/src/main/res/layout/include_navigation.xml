@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ui="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="start"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#50a0a0a0">
+
+    <ui.Button
+        android:id="@+id/action_swipe_refresh"
+        android:text="SwipeRefreshLayout"
+        android:textSize="@dimen/font_16"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:background="#4CAF50"
+        android:clickable="true"
+        ui:duration="300" />
+
+    <ui.Button
+        android:id="@+id/action_fresco"
+        android:text="Fresco"
+        android:textSize="@dimen/font_16"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:background="#4CAF50"
+        android:clickable="true"
+        ui:duration="300" />
+
+    <ui.Button
+        android:id="@+id/action_view_pager"
+        android:text="ViewPager"
+        android:textSize="@dimen/font_16"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:background="#4CAF50"
+        android:clickable="true"
+        ui:duration="300" />
+
+</LinearLayout>

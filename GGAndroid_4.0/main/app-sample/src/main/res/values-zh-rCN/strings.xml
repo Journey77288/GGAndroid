@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name_alpha">alpha_GGApp</string>
+    <string name="app_name_beta">beta_GGApp</string>
+    <string name="app_name_preview">pre_GGApp</string>
+    <string name="app_name_production">GGApp</string>
+    <string name="app_name_alpha_dev">alpha_GGApp_dev</string>
+    <string name="app_name_beta_dev">beta_GGApp_dev</string>
+    <string name="app_name_preview_dev">pre_GGApp_dev</string>
+    <string name="app_name_production_dev">GGApp_dev</string>
+
+    <!--system info-->
+    <string name="str_app_package_info">以下为打包信息，仅仅用于开发阶段测试反馈</string>
+    <string name="str_app_packaging_apk_info">Apk详情</string>
+    <string name="str_app_device_model">设备型号：%s</string>
+    <string name="str_app_flavors_mode">版本类型：%s</string>
+    <string name="str_app_version_name">版本名称：%s</string>
+    <string name="str_app_version_code">版本号：%s</string>
+    <string name="str_app_packaging_environment">打包环境：%s</string>
+    <string name="str_app_packaging_base_url">BaseUrl：%s</string>
+    <string name="str_app_package_name">包名：%s</string>
+    <string name="str_app_version_sdk">设备SDK版本：%s</string>
+    <string name="str_app_sys_version">系统版本：%s</string>
+
+    <!--字符串资源命名规范：直接以str_module_name规范进行(module为模块名称，name为字符串名称`过长可以用简单的缩写`)命名，方便使用时查找，示例：str_home_title-->
+    <!--不同页面、模块间字符串不进行复用，避免后期修改导致连锁反应。示例：str_home_user_name，str_mine_user_name-->
+
+    <!--  首页模块  -->
+    <string name="str_home_title">首页标题</string>
+    <string name="str_home_user_name">用户名称</string>
+
+
+    <!--  我的模块  -->
+    <string name="str_mine_title">我的</string>
+    <string name="str_mine_user_name">用户名称</string>
+
+    <!--  Home  -->
+    <string name="str_title">示例</string>
+    <string name="str_service_sample">服务示例</string>
+    <string name="str_component_sample">组件示例</string>
+    <string name="str_support_sample">支持示例</string>
+    <string name="str_widget_sample">自定义组件示例</string>
+    <string name="str_double_pressed_exit">再按一次退出应用</string>
+
+    <!--  Service Sample  -->
+    <string name="str_image_sample">图片加载示例</string>
+    <string name="str_http_sample">Retrofit接口访问示例</string>
+    <string name="str_open_sdk_sample">第三方登录示例</string>
+    <string name="str_pay_sample">第三方支付示例</string>
+    <string name="str_language_sample">语言切换示例</string>
+    <string name="str_wechat_pay">微信支付</string>
+    <string name="str_alipay_pay">支付宝支付</string>
+    <string name="str_pay_success">支付成功</string>
+    <string name="str_pay_cancel">支付取消</string>
+
+    <!--  Component Sample  -->
+    <string name="str_code_scanner_sample">扫码示例</string>
+    <string name="str_exhibition_state_sample">状态展示示例</string>
+    <string name="str_single_image_choose_sample">单选图片示例</string>
+    <string name="str_media_picker_sample">媒体选择器示例</string>
+    <string name="str_sticky_header_sample">列表粘性头部示例</string>
+    <string name="str_banner_sample">轮播图示例</string>
+    <string name="str_photo_crop_sample">图片裁剪示例</string>
+    <string name="str_webview_sample">WebView示例</string>
+    <string name="str_sidebar_sample">SideBar示例</string>
+    <string name="str_tab_sample">导航栏示例</string>
+    <string name="str_scan_qr_code">扫描二维码</string>
+    <string name="str_scan_qr_code_without_frame">扫描二维码（不带扫描框）</string>
+    <string name="str_scan_bar_code">扫描条形码</string>
+    <string name="str_create_code">创建二维码 / 条形码</string>
+    <string name="str_code_create_sample">二维码 / 条形码创建示例</string>
+    <string name="str_qr_code_scanner_sample">二维码扫描示例</string>
+    <string name="str_bar_code_scanner_sample">条形码扫描示例</string>
+    <string name="str_flashlight">手电筒</string>
+    <string name="str_album">相册</string>
+
+    <!--  Exhibition State Sample  -->
+    <string name="str_loading">加载中</string>
+    <string name="str_complete">完成</string>
+    <string name="str_empty">空</string>
+    <string name="str_error">错误</string>
+    <string name="str_network_error">网络错误</string>
+    <string name="str_empty_hint">没有数据</string>
+    <string name="str_error_hint">数据加载错误</string>
+
+    <!--  Single Image Choose Sample  -->
+    <string name="str_choose_from_album">选择相册图片</string>
+    <string name="str_choose_from_camera">选择相机图片</string>
+    <string name="str_choose_image_result">这是压缩后选择的图像: </string>
+
+    <!--  Tab Sample  -->
+    <string name="str_home">首页</string>
+    <string name="str_mall">商城</string>
+    <string name="str_event">事件</string>
+    <string name="str_me">我的</string>
+
+    <!--  Support Sample  -->
+    <string name="str_scheme_sample">Scheme示例</string>
+    <string name="str_open_scheme_h5_page">打开scheme的h5页面</string>
+    <string name="str_cache_sample">缓存示例</string>
+    <string name="str_skeleton_sample">骨骼加载效果示例</string>
+    <string name="str_permission_sample">权限请求示例</string>
+    <string name="str_cache_with_share_preference">通过SharedPreferences缓存数据</string>
+    <string name="str_cache_with_database">通过数据库缓存数据</string>
+    <string name="str_skeleton_with_view">骨骼效果加载View</string>
+    <string name="str_skeleton_with_recyclerview">骨骼效果加载RecyclerView</string>
+    <string name="str_share_preference_sample">SharePreference示例</string>
+    <string name="str_rx_activity_result_sample">RxActivityResult示例</string>
+    <string name="str_version_update_sample">版本更新示例</string>
+    <string name="str_location_sample">定位示例</string>
+    <string name="str_download_sample">下载示例</string>
+    <string name="str_rx_bus_sample">RxBus示例</string>
+    <string name="str_database_sample">数据库示例</string>
+    <string name="str_share_preference_hint">请输入需要缓存的内容:</string>
+    <string name="str_save">保存</string>
+    <string name="str_clean_cache">清除缓存</string>
+    <string name="str_clean_all_cache">清空所有缓存</string>
+    <string name="str_insert_data">插入数据</string>
+    <string name="str_clean_data">清空数据</string>
+    <string name="str_remove">删除</string>
+    <string name="str_request_storage_permission">请求外部存储权限</string>
+    <string name="str_request_location_permission">请求定位权限</string>
+    <string name="str_request_camera_permission">请求相机权限</string>
+    <string name="str_get_permission_success">已授予权限</string>
+    <string name="str_get_permission_fail">请求被拒绝</string>
+    <string name="str_result_data_value">结果数据: %s</string>
+    <string name="str_confirm">确认</string>
+    <string name="str_rxbus_observer_sample">RxBus观察者示例</string>
+    <string name="str_rxbus_observer_result">观察者获取到的信息:</string>
+    <string name="str_rxbus_send_message">发送信息</string>
+    <string name="str_rxbus_sender_sample">RxBus发送者示例</string>
+    <string name="str_rxbus_sticky_observer_sample">RxBus粘性事件观察者示例</string>
+    <string name="str_rxbus_sender_hint">请输入需要发送的消息:</string>
+    <string name="str_rxbus_sticky_sender_hint">请输入需要粘性发送的消息:</string>
+    <string name="str_rxbus_send">发送</string>
+    <string name="str_version_update_now">现在更新</string>
+    <string name="str_version_update_cancel">取消下载</string>
+    <string name="str_version_update_delete_apk">删除Apk</string>
+    <string name="str_version_title">发现新版本</string>
+    <string name="str_version_describe">版本说明:\n1、Bugs fixed</string>
+    <string name="str_version_already_latest_version">已经是最新版本</string>
+    <string name="str_version_download_progress_value">下载进度: %d%%</string>
+    <string name="str_version_update_fail">更新失败: %s</string>
+    <string name="str_version_install_fail">安装失败</string>
+    <string name="str_location">定位</string>
+    <string name="str_current_location_value">当前定位: %1$s, %2$s</string>
+    <string name="str_permission_request_reject">取消</string>
+    <string name="str_start">开始</string>
+    <string name="str_pause">暂停</string>
+    <string name="str_single_download">单任务下载示例</string>
+    <string name="str_multiple_download">多任务下载示例</string>
+    <string name="str_download_with_notification">带通知提示的下载示例</string>
+    <string name="str_start_download">开始下载</string>
+
+    <!--  Photo Crop  -->
+    <string name="str_photo_crop">图片裁剪示例</string>
+    <string name="str_crop">裁剪</string>
+    <string name="str_cropping">裁剪中…</string>
+    <string name="str_crop_shape">改变裁剪形状</string>
+    <string name="str_crop_ratio">改变裁剪比例</string>
+    <string name="str_require_storage_permission">需要存储权限才能选择文件</string>
+
+    <!--  Permission Hint  -->
+    <string name="str_storage_permission_test_title">存储权限使用说明</string>
+    <string name="str_storage_permission_test_hint">用于测试获取存储权限</string>
+    <string name="str_storage_permission_test_denied">无法获取存储权限，请到应用设置-权限管理处允许存储权限</string>
+    <string name="str_location_permission_test_title">位置信息权限使用说明</string>
+    <string name="str_location_permission_test_hint">用于测试获取位置权限</string>
+    <string name="str_location_permission_test_denied">无法获取位置信息权限，请到应用设置-权限管理处允许位置信息权限</string>
+    <string name="str_camera_permission_test_title">相机权限使用说明</string>
+    <string name="str_camera_permission_test_hint">用于测试获取相机权限</string>
+    <string name="str_camera_permission_test_denied">无法获取相机权限，请到应用设置-权限管理处允许相机和外部存储权限</string>
+</resources>

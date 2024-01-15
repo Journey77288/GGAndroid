@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.demo.viewmodel.activity.RxQiNiuVModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include_header"
+            layout="@layout/include_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50" />
+
+        <ImageView
+            android:id="@+id/iv_picture"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_150"
+            android:layout_below="@id/include_header"
+            android:layout_alignParentLeft="true"
+            android:bind_image_file_path="@{data.src}" />
+
+        <TextView
+            android:id="@+id/tv_local_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_picture"
+            android:layout_alignLeft="@id/iv_picture"
+            android:layout_alignRight="@id/iv_picture"
+            android:gravity="center"
+            android:text="Local Picture" />
+
+        <ImageView
+            android:id="@+id/iv_picture_remote"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_150"
+            android:layout_below="@id/include_header"
+            android:layout_alignParentRight="true"
+            android:bind_image_file_path="@{data.remoteUrl}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_picture"
+            android:layout_alignLeft="@id/iv_picture_remote"
+            android:layout_alignRight="@id/iv_picture_remote"
+            android:gravity="center"
+            android:text="Remote Picture" />
+
+        <include
+            android:id="@+id/include_recycler"
+            layout="@layout/include_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_120"
+            android:layout_below="@id/tv_local_pic"
+            android:layout_marginTop="@dimen/dp_20" />
+
+        <TextView
+            android:id="@+id/tv_list_remote_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/include_recycler"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="List Remote Picture" />
+
+        <Button
+            android:id="@+id/btn_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/include_recycler"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_20"
+            android:onClick="@{data.pickImage()}"
+            android:text="PICK IMAGE" />
+
+        <Button
+            android:id="@+id/btn_take_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/include_recycler"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_50"
+            android:onClick="@{data.takePhoto()}"
+            android:text="Take Photo" />
+
+        <Button
+            android:id="@+id/btn_upload_single"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_pick"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:onClick="@{data.uploadSingle()}"
+            android:text="UPLOAD SINGLE PICTURE" />
+
+        <Button
+            android:id="@+id/btn_upload_multi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_upload_single"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:onClick="@{data.uploadMulti()}"
+            android:text="UPLOAD MULTI PICTURE" />
+
+        <Button
+            android:id="@+id/btn_queue_upload_multi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_upload_multi"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:onClick="@{data.queueUpload()}"
+            android:text="QUEUE UPLOAD MULTI PICTURE" />
+
+    </RelativeLayout>
+</layout>

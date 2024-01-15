@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GGDemo</string>
+
+    <!--运动类型 数组-->
+    <string-array name="sports">
+        <item>足球</item>
+        <item>篮球</item>
+        <item>台球</item>
+        <item>羽毛球</item>
+        <item>乒乓球</item>
+        <item>跑步</item>
+        <item>俯卧撑</item>
+        <item>引体向上</item>
+        <item>网球</item>
+        <item>瑜伽</item>
+        <item>游泳</item>
+    </string-array>
+</resources>

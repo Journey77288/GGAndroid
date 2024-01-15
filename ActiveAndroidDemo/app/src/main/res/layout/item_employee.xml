@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.incubator.entity.db.Employee" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:onClick="@{data.onAlter}"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="@{data.name}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_14"
+            tools:text="employee name" />
+
+        <Button
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center_vertical"
+            android:onClick="@{data.onDeleteClick}"
+            android:text="delete" />
+    </LinearLayout>
+</layout>

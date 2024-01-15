@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.core.viewmodel.common.widget.RecyclerVModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:bind_adapter_to_recycler_view="@{data.adapter}"
+        android:bind_background_drawable_to_view="@{data.backgroundDrawable}"
+        android:bind_height_to_view="@{data.height}"
+        android:bind_item_decoration_to_recycler_view="@{data.itemDecoration}"
+        android:bind_layout_manager_to_recycler_view="@{data.layoutManagerDelegate.create()}"
+        android:bind_margin_bottom_to_view="@{data.marginBottom}"
+        android:bind_margin_left_to_view="@{data.marginLeft}"
+        android:bind_margin_right_to_view="@{data.marginRight}"
+        android:bind_margin_top_to_view="@{data.marginTop}"
+        android:bind_over_scroll_boolean_to_recycler_view="@{data.isOverScroll}"
+        android:bind_padding_bottom_to_view="@{data.paddingBottom}"
+        android:bind_padding_left_to_view="@{data.paddingLeft}"
+        android:bind_padding_right_to_view="@{data.paddingRight}"
+        android:bind_padding_top_to_view="@{data.paddingTop}"
+        android:bind_span_size_lookup_to_recycler_view="@{data.spanSizeLookup}"
+        android:bind_width_to_view="@{data.width}"
+        android:clickable="@{data.clickable}"
+        android:enabled="@{data.enabled}" />
+
+</layout>

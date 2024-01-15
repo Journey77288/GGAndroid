@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Activity.NoActionbar" parent="Activity.Me">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--配置凹凸屏显示模式为：占用凹边周围-->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+
+</resources>

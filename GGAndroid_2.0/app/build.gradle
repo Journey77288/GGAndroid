@@ -1,0 +1,47 @@
+apply from: "${rootProject.projectDir}/config/appConfig.gradle"
+apply from: 'deploy.gradle'
+apply plugin: 'com.android.application'
+android {
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/layouts/activity',//Activity xml文件
+                    'src/main/res/layouts/dialog',//dialog xml文件
+                    'src/main/res/layouts/item',//dialog xml文件
+                    'src/main/res/layouts/loading',//loading xml文件
+                    'src/main/res/layouts/empty',//empty xml文件
+                    'src/main/res/layouts/view',//view xml文件
+                    'src/main/res/layouts/common',//通用 xml文件
+                    'src/main/res/layouts',
+                    'src/main/res'
+            ]
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':GGControls:GGViewModel')
+    implementation project(':GGCore:GGHttp')
+    implementation project(':GGPay:pay-core')
+    implementation project(':GGPay:pay-alipay')
+    implementation project(":GGPay:pay-wxpay")
+    implementation project(":GGOpen:open-wechat")
+    implementation project(':GGOpen:open-core')
+    implementation project(":GGOpen:open-qq")
+    implementation project(":GGOpen:open-sina")
+
+    //用于注解，编译时，自动生成get、set、equals、toString等函数，具体参考类库文档
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    //用于注解，编译时，自动实现Parcelable接口，生成相关函数，
+    implementation libs.parceler_api
+    annotationProcessor libs.parceler
+
+    // leakcanary 内存检测
+    debugImplementation libs.leakcanary_android
+    releaseImplementation libs.leakcanary_android_no_op
+    debugImplementation libs.leakcanary_support_fragment
+}
+
+

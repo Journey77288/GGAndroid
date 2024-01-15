@@ -1,0 +1,21 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':GGCore:GGUtils')
+    implementation project(':GGOpen:open-core')
+    api(libs.twitter_sdk) { transitive = true }
+    api libs.tweet_composer
+    api libs.tweet_ui
+}

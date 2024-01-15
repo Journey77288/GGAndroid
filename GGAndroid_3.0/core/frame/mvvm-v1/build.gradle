@@ -1,0 +1,34 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':core:support:utils')
+    api project(':core:support:rxjava')
+    api project(':core:service:http:http-use')
+    api project(':core:widget:appcompat')
+    api project(':core:support:recyclerview-adapter')
+
+    api libs.smart_refresh_layout
+    api libs.smart_refresh_header_classics
+    api libs.smart_refresh_header_material
+    api libs.smart_refresh_footer_classics
+    api libs.materialprogressbar
+
+    api libs.androidx_cardview
+    api libs.androidx_recycler_view
+    api libs.recyclerview_animators
+    api libs.shimmerlayout
+    api libs.tbs_sdk
+    api project(':core:component:banner')
+    api project(':core:component:tab')
+    api project(':core:component:exhibition-state')
+    api project(':core:support:utils')
+    api project(':core:support:core')
+    api project(':core:support:rxjava')
+
+    api libs.kotlinx_coroutines_core
+    api libs.kotlinx_coroutines_android
+
+    api project(':core:support:lifecycle')
+
+}
+

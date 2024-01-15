@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.sample.viewmodel.component.ActivitySideBarSampleVModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fly_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/fly_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <io.ganguo.sidebar.SideBarView
+                android:id="@+id/sb_view"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:bind_visible_boolean_to_view="@{data.sideBarVisible}"
+                app:sideItemHeight="@dimen/dp_18"
+                app:sidePressedTextBgColor="@color/colorPrimary"
+                app:sidePressedTextColor="@color/white"
+                app:sideTextColor="@color/black"
+                app:sideTextSize="@dimen/font_14" />
+
+            <io.ganguo.sidebar.SideBarHintView
+                android:id="@+id/sb_hint"
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_36"
+                android:layout_gravity="end"
+                android:layout_marginRight="@dimen/dp_50"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/bg_side_hint"
+                android:bind_visible_boolean_to_view="@{data.sideBarVisible}"
+                app:sideHintTextSize="@dimen/font_20"
+                app:sideHintTextOffsetX="@dimen/dp_n7"
+                app:sideHintTextColor="@color/white" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

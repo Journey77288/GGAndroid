@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.ganguo.line">
+    <!--  适配Android11包可见度  -->
+    <queries>
+        <!-- Line SDK -->
+        <package android:name="jp.naver.line.android" />
+    </queries>
+</manifest>

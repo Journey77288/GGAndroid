@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GGLib2</string>
+    <string name="app_name_stage">GGLib2_s</string>
+    <string name="action_settings">Settings</string>
+
+    <!--字符串资源命名规范：直接以str_name(name为字符串名称`过长可以用简单的缩写`)命名，方便使用时查找。示例：str_home-->
+    <!--system info-->
+    <string name="str_package_info">以下为打包信息，仅仅用于开发阶段测试反馈</string>
+    <string name="str_packaging_apk_info">Apk详情</string>
+    <string name="str_packaging_environment">打包环境：%s</string>
+    <string name="str_packaging_base_url">BaseUrl：%s</string>
+    <string name="str_packaging_time">打包时间：%s</string>
+    <string name="str_version_sdk">设备SDK版本：%s</string>
+    <string name="str_sys_version">系统版本：%s</string>
+    <string name="str_device_model">设备型号：%s</string>
+    <string name="str_version_name">版本名称：%s</string>
+    <string name="str_version_code">版本号：%s</string>
+</resources>

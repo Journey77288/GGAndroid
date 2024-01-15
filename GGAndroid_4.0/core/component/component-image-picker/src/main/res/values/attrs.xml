@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="bucket.dropdown.title.color" format="reference|color"/>
+    <attr name="bucket.dropdown.count.color" format="reference|color"/>
+    <attr name="bucket.empty.text.color" format="reference|color"/>
+
+    <attr name="listPopupWindowStyle" format="reference"/>
+
+    <attr name="item.placeholder.color" format="reference|color"/>
+    <attr name="item.checkCircle.backgroundColor" format="reference|color"/>
+    <attr name="item.checkCircle.borderColor" format="reference|color"/>
+    <attr name="capture.textColor" format="reference|color"/>
+
+    <attr name="bottomBar.bg" format="reference|color"/>
+    <attr name="bottomBar.preview.textColor" format="reference|color"/>
+    <attr name="bottomBar.apply.textColor" format="reference|color"/>
+
+    <attr name="preview.bottomToolbar.back.textColor" format="reference|color"/>
+    <attr name="preview.bottomToolbar.apply.textColor" format="reference|color"/>
+
+    <declare-styleable name="CheckView">
+        <attr name="circle_size" format="float" />
+    </declare-styleable>
+
+</resources>

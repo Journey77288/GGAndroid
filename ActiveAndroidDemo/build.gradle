@@ -1,0 +1,33 @@
+apply from: 'dependencies.gradle'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+buildscript {
+    repositories {
+        maven { url 'http://gg2710.jios.org:8081/nexus/content/groups/ganguo_public/' }
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url properties.getProperty("sdk.dir") + "/extras/android/m2repository" }
+        maven { url 'http://gg2710.jios.org:8081/nexus/content/groups/ganguo_public/' }
+        mavenCentral()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
+

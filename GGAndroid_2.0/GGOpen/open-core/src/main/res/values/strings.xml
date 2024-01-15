@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GGOpen</string>
+    <string name="str_wechat_version_hint">您的微信版本过低或未安装微信，需要安装微信才能使用...</string>
+    <string name="str_line_version_hint">您的Line版本过低或未安装Line，需要Line才能使用...</string>
+    <string name="str_not_found_file">该本地图片不存在</string>
+</resources>

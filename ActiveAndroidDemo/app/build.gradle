@@ -1,0 +1,124 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
+
+    defaultConfig {
+        applicationId "io.ganguo.active"
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        ganguo_dev {
+            storeFile file("ganguo_dev.jks")
+            storePassword "120521"
+            keyAlias "ganguo_dev"
+            keyPassword "120521"
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField "int", "LOG_LEVEL", "2" //Log.VERBOSE
+            debuggable true
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false //debug包用于开发时使用, 一般不不需要混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.ganguo_dev
+        }
+        release {
+            buildConfigField "int", "LOG_LEVEL", "4" //Log.INFO
+            debuggable true
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled false //请认真考虑是否需要混淆, 强烈建议使用代码混淆, 用于测试部门、客户测试、上线
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.ganguo_dev
+        }
+        //命名各apk
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                def mApplicationId = variant.mergedFlavor.applicationId + (variant.buildType.applicationIdSuffix == null ? "" : variant.buildType.applicationIdSuffix)
+                def mVersionName = variant.mergedFlavor.versionName + (variant.buildType.versionNameSuffix == null ? "" : variant.buildType.versionNameSuffix)
+                if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                    def fileName = "${variant.buildType.name}_${variant.productFlavors[0].name}_${mApplicationId}_${defaultConfig.versionCode}_v${mVersionName}.apk"
+                    output.outputFile = new File(outputFile.parent, fileName)
+                }
+            }
+        }
+    }
+    // 多渠道
+    productFlavors {
+        /**
+         * 测试服务器
+         */
+        stage {
+            applicationId "io.ganguo.active.dev"//测试包名
+            manifestPlaceholders = [
+                    appLabel     : "@string/m_app_name_stage",
+                    UMENG_CHANNEL: "stage",
+            ]
+            buildConfigField "boolean", "isStage", "true"
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+            buildConfigField "String", "DATA_PATH", '"active_android_demo"'
+        }
+        /**
+         * 后边的全都是生产环境, 一行一个渠道包
+         *
+         */
+        production {}
+        //xiaomi{}
+        //qihu360{}
+        //yingyongbao{}
+    }
+
+    //为生产环境配置所有的渠道包
+    productFlavors.all { flavor ->
+        if (flavor.name != "stage") {
+            flavor.applicationId "io.ganguo.active"//正式包名
+            flavor.manifestPlaceholders = [
+                    appLabel     : "@string/m_app_name",
+                    UMENG_CHANNEL: flavor.name,
+            ]
+            flavor.buildConfigField "boolean", "isStage", "false"
+            flavor.buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+            flavor.buildConfigField "String", "DATA_PATH", '"active_android_demo"'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    Map<String, String> dependency = rootProject.ext.dependencies;
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':GGLibrary')
+    compile project(':OpenSDK')
+
+    compile dependency.activeAndroid
+    compile dependency.flexibleDivider
+    compile dependency.recyclerviewAnimators
+}

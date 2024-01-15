@@ -1,0 +1,20 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':GGCore:GGUtils')
+    api project(':GGCore:GGRxJava')
+    api project(':GGCore:GGVMCore')
+    api libs.cardview
+    api libs.recycler_view
+    api libs.recyclerview_animators
+    api libs.shimmerlayout
+    api project(':GGControls:GGBanner')
+    api project(':GGControls:GGTab')
+}
+

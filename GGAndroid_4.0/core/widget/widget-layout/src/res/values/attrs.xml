@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="CornerFrameLayout">
+        <attr name="cornersRadius" format="dimension" />
+    </declare-styleable>
+</resources>

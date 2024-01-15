@@ -1,0 +1,18 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+
+android {
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api project(":core:service:image:image-core")
+    api libs.glide
+    kapt libs.glide_annotation_processor
+    api libs.glide_recyclerview_integration
+    api libs.glide_transformations
+}

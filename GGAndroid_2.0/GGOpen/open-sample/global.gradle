@@ -1,0 +1,76 @@
+apply from: "${rootProject.projectDir}/config/appConfig.gradle"
+apply plugin: 'com.android.application'
+android {
+    defaultConfig {
+        applicationId "io.ganguo.open"
+        versionCode 1
+        versionName "1.0"
+    }
+    // 多渠道
+    productFlavors {
+        /**
+         * 测试服务器
+         */
+        stage {
+            applicationId "io.ganguo.open"// 测试包名
+            manifestPlaceholders = [
+                    appLabel           : "@string/app_name",
+                    UMENG_CHANNEL      : "stage",
+                    FACEBOOK_APP_ID    : '"312638299325242"',
+                    FACEBOOK_APP_SCHEME: "fb312638299325242"
+            ]
+            buildConfigField "boolean", "isStage", "true"
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+
+            // 分享相关key配置
+            buildConfigField "String", "WECHAT_APP_ID", '"wx544e1226f9251aec"'
+            buildConfigField "String", "WECHAT_APP_SECRET", '"7bead34c59d2796e2329db9e9c0f6e0a"'
+            buildConfigField "String", "QQ_APP_ID", '"1107880735"'
+            buildConfigField "String", "ALIPAY_APP_KEY", '"2016033001253029"'
+            buildConfigField "String", "SINA_APP_KEY", '"1350719244"'
+            buildConfigField "String", "SINA_REDIRECT_URL", '"http://www.baidu.com"'
+            buildConfigField "String", "SINA_SCOPE", '"email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"'
+            buildConfigField "String", "FACEBOOK_APP_ID", '"276644269728239"'
+            buildConfigField "String", "TWITTER_API_KEY ", '"xGKv0T9aUHcNq8Ua7zYijfR3p"'
+            buildConfigField "String", "TWITTER_API_SECRET_KEY ", '"7OVzTEFGjQZhVsxsUO2449AUxioJ73DeZFgT56CfUgF8D7gdPv"'
+            buildConfigField "String", "LINE_CHANNEL_ID", '"1620158986"'
+
+        }
+        /**
+         * 后边的全都是生产环境, 一行一个渠道包
+         *
+         */
+        production { dimension "default" }
+        //xiaomi{}
+        //qihu360{}
+        //yingyongbao{}
+    }
+
+    // 为生产环境配置所有的渠道包
+    productFlavors.all { flavor ->
+        if (flavor.name != "stage") {
+            flavor.applicationId "io.ganguo.open"// 正式包名
+            flavor.manifestPlaceholders = [
+                    appLabel           : "@string/app_name",
+                    UMENG_CHANNEL      : flavor.name,
+                    FACEBOOK_APP_ID    : '"312638299325242"',
+                    FACEBOOK_APP_SCHEME: "fb312638299325242"
+            ]
+            flavor.buildConfigField "boolean", "isStage", "false"
+            flavor.buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+
+            // 分享相关key配置
+            flavor.buildConfigField "String", "WECHAT_APP_ID", '"wx544e1226f9251aec"'
+            flavor.buildConfigField "String", "WECHAT_APP_SECRET", '"7bead34c59d2796e2329db9e9c0f6e0a"'
+            flavor.buildConfigField "String", "QQ_APP_ID", '"1107880735"'
+            flavor.buildConfigField "String", "ALIPAY_APP_KEY", '"2016033001253029"'
+            flavor.buildConfigField "String", "SINA_APP_KEY", '"1350719244"'
+            flavor.buildConfigField "String", "SINA_REDIRECT_URL", '"http://www.baidu.com"'
+            flavor.buildConfigField "String", "SINA_SCOPE", '"email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"'
+            flavor.buildConfigField "String", "FACEBOOK_APP_ID", '"276644269728239"'
+            flavor.buildConfigField "String", "TWITTER_API_KEY ", '"xGKv0T9aUHcNq8Ua7zYijfR3p"'
+            flavor.buildConfigField "String", "TWITTER_API_SECRET_KEY ", '"7OVzTEFGjQZhVsxsUO2449AUxioJ73DeZFgT56CfUgF8D7gdPv"'
+            flavor.buildConfigField "String", "LINE_CHANNEL_ID", '"1620158986"'
+        }
+    }
+}

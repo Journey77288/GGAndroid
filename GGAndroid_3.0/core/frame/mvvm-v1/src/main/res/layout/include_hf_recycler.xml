@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.pack.common.HFRecyclerViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rly_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <!--child must have none transparent background-->
+        <LinearLayout
+            android:id="@+id/lly_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:bind_enable_elevation_to_layout="@{data.isEnableHeaderElevation}"
+            android:clipToPadding="false"
+            android:elevation="@dimen/dp_4"
+            android:orientation="vertical" />
+
+        <!--child must have none transparent background-->
+        <LinearLayout
+            android:id="@+id/lly_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:bind_enable_elevation_to_layout="@{data.isEnableFooterElevation}"
+            android:clipToPadding="false"
+            android:elevation="@dimen/dp_4"
+            android:orientation="vertical" />
+
+
+        <include
+            android:id="@+id/include_recycler"
+            layout="@layout/include_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/lly_footer"
+            android:layout_below="@id/lly_header" />
+
+        <FrameLayout
+            android:id="@+id/lly_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/lly_footer"
+            android:layout_below="@id/lly_header"
+            android:animateLayoutChanges="@{data.isAnimateLayoutChanges}"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

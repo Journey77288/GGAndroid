@@ -1,0 +1,14 @@
+<resources>
+    <!--system info-->
+    <!--字符串资源命名规范：直接以str_module_name规范进行(module为模块名称，name为字符串名称`过长可以用简单的缩写`)命名，方便使用时查找，示例：str_home_title-->
+    <!--不同页面、模块间字符串不进行复用，避免后期修改导致连锁反应。示例：str_home_user_name，str_mine_user_name-->
+
+    <!--  首页模块  -->
+    <string name="str_home_title">首页标题</string>
+    <string name="str_home_user_name">用户名称</string>
+
+
+    <!--  我的模块  -->
+    <string name="str_mine_title">我的</string>
+    <string name="str_mine_user_name">用户名称</string>
+</resources>

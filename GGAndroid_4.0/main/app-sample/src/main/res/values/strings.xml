@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name_alpha">alpha_GGApp</string>
+    <string name="app_name_beta">beta_GGApp</string>
+    <string name="app_name_preview">pre_GGApp</string>
+    <string name="app_name_production">GGApp</string>
+    <string name="app_name_alpha_dev">alpha_GGApp_dev</string>
+    <string name="app_name_beta_dev">beta_GGApp_dev</string>
+    <string name="app_name_preview_dev">pre_GGApp_dev</string>
+    <string name="app_name_production_dev">GGApp_dev</string>
+
+    <!--system info-->
+    <string name="str_app_package_info">以下为打包信息，仅仅用于开发阶段测试反馈</string>
+    <string name="str_app_packaging_apk_info">Apk详情</string>
+    <string name="str_app_device_model">设备型号：%s</string>
+    <string name="str_app_flavors_mode">版本类型：%s</string>
+    <string name="str_app_version_name">版本名称：%s</string>
+    <string name="str_app_version_code">版本号：%s</string>
+    <string name="str_app_packaging_environment">打包环境：%s</string>
+    <string name="str_app_packaging_base_url">BaseUrl：%s</string>
+    <string name="str_app_package_name">包名：%s</string>
+    <string name="str_app_version_sdk">设备SDK版本：%s</string>
+    <string name="str_app_sys_version">系统版本：%s</string>
+
+    <!--字符串资源命名规范：直接以str_module_name规范进行(module为模块名称，name为字符串名称`过长可以用简单的缩写`)命名，方便使用时查找，示例：str_home_title-->
+    <!--不同页面、模块间字符串不进行复用，避免后期修改导致连锁反应。示例：str_home_user_name，str_mine_user_name-->
+
+    <!--  首页模块  -->
+    <string name="str_home_title">首页标题</string>
+    <string name="str_home_user_name">用户名称</string>
+
+
+    <!--  我的模块  -->
+    <string name="str_mine_title">我的</string>
+    <string name="str_mine_user_name">用户名称</string>
+
+    <!--  Home  -->
+    <string name="str_title">Sample</string>
+    <string name="str_service_sample">Service Sample</string>
+    <string name="str_component_sample">Component Sample</string>
+    <string name="str_support_sample">Support Sample</string>
+    <string name="str_widget_sample">Widget Sample</string>
+    <string name="str_double_pressed_exit">Double click to exit app</string>
+
+    <!--  Service Sample  -->
+    <string name="str_image_sample">ImageEngine Sample</string>
+    <string name="str_http_sample">Retrofit Http Sample</string>
+    <string name="str_open_sdk_sample">Open Sdk Sample</string>
+    <string name="str_pay_sample">Pay Sample</string>
+    <string name="str_language_sample">Locale Sample</string>
+    <string name="str_wechat_pay">Pay via WeChat</string>
+    <string name="str_alipay_pay">Pay via AliPay</string>
+    <string name="str_pay_success">Pay success</string>
+    <string name="str_pay_cancel">Pay cancel</string>
+
+    <!--  Component Sample  -->
+    <string name="str_code_scanner_sample">Code Scanner Sample</string>
+    <string name="str_exhibition_state_sample">Exhibition State Sample</string>
+    <string name="str_single_image_choose_sample">Single Image Choose Sample</string>
+    <string name="str_media_picker_sample">Media Picker Sample</string>
+    <string name="str_sticky_header_sample">Sticky Header Sample</string>
+    <string name="str_banner_sample">Banner Sample</string>
+    <string name="str_photo_crop_sample">Photo Crop Sample</string>
+    <string name="str_webview_sample">WebView Sample</string>
+    <string name="str_sidebar_sample">SideBar Sample</string>
+    <string name="str_tab_sample">Tab Sample</string>
+    <string name="str_scan_qr_code">Scan QR code</string>
+    <string name="str_scan_qr_code_without_frame">Scan QR code without frame</string>
+    <string name="str_scan_bar_code">Scan bar code</string>
+    <string name="str_create_code">Create QR / Bar code</string>
+    <string name="str_code_create_sample">QR / Bar Code Create Sample</string>
+    <string name="str_qr_code_scanner_sample">QR Code Scanner Sample</string>
+    <string name="str_bar_code_scanner_sample">Bar Code Scanner Sample</string>
+    <string name="str_flashlight">Flashlight</string>
+    <string name="str_album">Album</string>
+
+    <!--  Exhibition State Sample  -->
+    <string name="str_loading">Loading</string>
+    <string name="str_complete">Complete</string>
+    <string name="str_empty">Empty</string>
+    <string name="str_error">Error</string>
+    <string name="str_network_error">Network Error</string>
+    <string name="str_empty_hint">No data</string>
+    <string name="str_error_hint">Load data error</string>
+
+    <!--  Single Image Choose Sample  -->
+    <string name="str_choose_from_album">Choose Album Image</string>
+    <string name="str_choose_from_camera">Choose Camera Image</string>
+    <string name="str_choose_image_result">Here is image chosen after compression: </string>
+
+    <!--  Tab Sample  -->
+    <string name="str_home">Home</string>
+    <string name="str_mall">Mall</string>
+    <string name="str_event">Event</string>
+    <string name="str_me">Me</string>
+
+    <!--  Support Sample  -->
+    <string name="str_scheme_sample">Scheme Sample</string>
+    <string name="str_open_scheme_h5_page">Open scheme h5 page</string>
+    <string name="str_cache_sample">Cache Sample</string>
+    <string name="str_skeleton_sample">Skeleton Sample</string>
+    <string name="str_permission_sample">Permission Sample</string>
+    <string name="str_cache_with_share_preference">Cache Data With SharePreference</string>
+    <string name="str_cache_with_database">Cache Data With Database</string>
+    <string name="str_skeleton_with_view">Skeleton With View</string>
+    <string name="str_skeleton_with_recyclerview">Skeleton With RecyclerView</string>
+    <string name="str_share_preference_sample">SharePreference Sample</string>
+    <string name="str_rx_activity_result_sample">RxActivityResult Sample</string>
+    <string name="str_version_update_sample">Version Update Sample</string>
+    <string name="str_location_sample">Location Sample</string>
+    <string name="str_download_sample">Download Sample</string>
+    <string name="str_rx_bus_sample">RxBus Sample</string>
+    <string name="str_database_sample">Database Sample</string>
+    <string name="str_share_preference_hint">Please enter what needs to be cached:</string>
+    <string name="str_save">Save</string>
+    <string name="str_clean_cache">Clean Cache</string>
+    <string name="str_clean_all_cache">Clean All Cache</string>
+    <string name="str_insert_data">Insert data</string>
+    <string name="str_clean_data">Clean data</string>
+    <string name="str_remove">Remove</string>
+    <string name="str_request_storage_permission">Request storage permission</string>
+    <string name="str_request_location_permission">Request location permission</string>
+    <string name="str_request_camera_permission">Request camera permission</string>
+    <string name="str_get_permission_success">Permission Granted</string>
+    <string name="str_get_permission_fail">Permission Denied</string>
+    <string name="str_result_data_value">result data: %s</string>
+    <string name="str_confirm">Confirm</string>
+    <string name="str_rxbus_observer_sample">RxBus Observer Sample</string>
+    <string name="str_rxbus_observer_result">Observer received message:</string>
+    <string name="str_rxbus_send_message">Send message</string>
+    <string name="str_rxbus_sender_sample">RxBus Sender Sample</string>
+    <string name="str_rxbus_sticky_observer_sample">RxBus Sticky Observer Sample</string>
+    <string name="str_rxbus_sender_hint">Please enter what message needs to be sended:</string>
+    <string name="str_rxbus_sticky_sender_hint">Please enter what message needs to be sticky sended:</string>
+    <string name="str_rxbus_send">Send</string>
+    <string name="str_version_update_now">Update now</string>
+    <string name="str_version_update_cancel">Cancel download</string>
+    <string name="str_version_update_delete_apk">Delete Apk</string>
+    <string name="str_version_title">New version found</string>
+    <string name="str_version_describe">Version desc:\n1、Bugs fixed</string>
+    <string name="str_version_already_latest_version">Already latest version</string>
+    <string name="str_version_download_progress_value">Download Progress: %d%%</string>
+    <string name="str_version_update_fail">Update fail: %s</string>
+    <string name="str_version_install_fail">Install error</string>
+    <string name="str_location">Location</string>
+    <string name="str_current_location_value">Current Location: %1$s, %2$s</string>
+    <string name="str_permission_request_reject">Cancel</string>
+    <string name="str_start">Start</string>
+    <string name="str_pause">Pause</string>
+    <string name="str_single_download">Single Task Download</string>
+    <string name="str_multiple_download">Multitask Download</string>
+    <string name="str_download_with_notification">Download With Notification</string>
+    <string name="str_start_download">Start Download</string>
+
+    <!--  Photo Crop  -->
+    <string name="str_photo_crop">Photo Crop Sample</string>
+    <string name="str_crop">Crop</string>
+    <string name="str_cropping">Cropping…</string>
+    <string name="str_crop_shape">Change Crop Shape</string>
+    <string name="str_crop_ratio">Change Crop Ratio</string>
+    <string name="str_require_storage_permission">Need storage permission to pick file</string>
+
+    <!--  Permission Hint  -->
+    <string name="str_storage_permission_test_title">Storage Permission Instructions</string>
+    <string name="str_storage_permission_test_hint">Used to test for getting storage permission</string>
+    <string name="str_storage_permission_test_denied">Unable to obtain storage permission, please go to App Settings - Permission Management to allow storage permission</string>
+    <string name="str_location_permission_test_title">Location Information Permission Instructions</string>
+    <string name="str_location_permission_test_hint">Used to test for getting location permission</string>
+    <string name="str_location_permission_test_denied">Unable to obtain location information permission, please go to App Settings - Permission Management to allow location information permission</string>
+    <string name="str_camera_permission_test_title">Camera Permission Instructions</string>
+    <string name="str_camera_permission_test_hint">Used to test for getting camera permission</string>
+    <string name="str_camera_permission_test_denied">Unable to obtain location information permission, please go to App Settings - Permission Management to allow camera and storage permission</string>
+</resources>

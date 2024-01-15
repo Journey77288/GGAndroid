@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Banner">
+        <attr name="delay_time" format="integer" />
+        <attr name="scroll_time" format="integer" />
+        <attr name="is_auto_play" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Indicator">
+        <attr name="indicator_width" format="dimension" />
+        <attr name="indicator_height" format="dimension" />
+        <attr name="indicator_space" format="dimension" />
+        <attr name="indicator_drawable_res" format="integer" />
+        <attr name="indicator_count" format="integer" />
+    </declare-styleable>
+</resources>

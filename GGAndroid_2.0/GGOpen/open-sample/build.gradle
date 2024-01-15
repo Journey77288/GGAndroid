@@ -1,0 +1,23 @@
+apply from: "global.gradle"
+apply plugin: 'com.android.application'
+
+repositories {
+    flatDir {
+        dirs("${rootProject.projectDir}/GGOpen/open-line/libs/aar/")
+    }
+}
+
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs;
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':GGOpen:open-wechat')
+    implementation project(':GGOpen:open-qq')
+    implementation project(':GGOpen:open-core')
+    implementation project(':GGOpen:open-sina')
+    implementation project(":GGOpen:open-google")
+    implementation project(":GGOpen:open-facebook")
+    implementation project(':GGControls:GGViewModel')
+    implementation project(':GGControls:GGRxImagePicker')
+    implementation project(":GGOpen:open-twitter")
+    implementation project(":GGOpen:open-line")
+}

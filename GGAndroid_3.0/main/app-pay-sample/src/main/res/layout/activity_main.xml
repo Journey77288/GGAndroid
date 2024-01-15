@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:gravity="center"
+        android:text="GGUBCL:Pay Demo"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/view_"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#f0f0f0" />
+
+    <Button
+        android:id="@+id/btn_alipay"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Alipay"
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:id="@+id/btn_wxpay"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="WXPay"
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

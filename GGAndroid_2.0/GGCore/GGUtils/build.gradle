@@ -1,0 +1,41 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+configurations.all {
+    it.dependencies.all {
+        if (it instanceof ModuleDependency) {
+            excludeModule(it, 'support-v4')
+            excludeModule(it, 'appcompat-v7')
+            excludeModule(it, 'support-annotations')
+            excludeModule(it, 'recyclerview-v7')
+        }
+    }
+}
+
+static def excludeModule(Dependency dependency, String moduleName) {
+    if (dependency.name != moduleName) {
+        dependency.exclude(module: moduleName)
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.v7
+    implementation libs.v4
+    implementation libs.recycler_view
+    implementation libs.recyclerview_animators
+    api(libs.permission) {
+        exclude group: 'com.android.support.v7'
+    }
+    api project(':GGControls:GGRes')
+    api libs.yearclass
+    api libs.systembartint
+    api libs.gson
+    api libs.design
+    api libs.annotations
+    api(libs.material_dialogs) {
+        transitive = true
+    }
+    testImplementation project(':GGCore:GGTest')
+}
+

@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="Style_Scan" parent="Activity.NoActionbar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/black_translucent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowAnimationStyle">@style/Activity.AnimationFade</item>
+    </style>
+</resources>

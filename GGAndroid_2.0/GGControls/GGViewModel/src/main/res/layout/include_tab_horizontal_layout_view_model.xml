@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.common.TabLayoutViewModel" />
+    </data>
+
+    <com.ganguo.tab.view.TabHorizontalLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:bind_bg_color="@{data.getBackgroundColor()}"
+        android:bind_view_height="@{data.tabHeight}"
+        app:bindTabModel="@{data.getTabModel()}" />
+</layout>

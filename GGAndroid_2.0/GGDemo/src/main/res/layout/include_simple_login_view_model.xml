@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.demo.viewmodel.activity.LoginVModel" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_30"
+        android:paddingRight="@dimen/dp_30">
+
+        <include
+            android:id="@+id/include_account_view_model"
+            layout="@layout/include_edittext_view_model"
+            app:data="@{data.accountViewModel}" />
+
+        <include
+            android:id="@+id/include_password_view_model"
+            layout="@layout/include_edittext_view_model"
+            app:data="@{data.passwordViewModel}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:background="@color/colorPrimary"
+            android:onClick="@{data.clickLogin()}"
+            android:text="登录"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</layout>

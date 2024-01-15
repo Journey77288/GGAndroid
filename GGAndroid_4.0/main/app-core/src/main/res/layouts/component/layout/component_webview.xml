@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.core.viewmodel.common.component.WebViewModel" />
+
+        <import type="io.ganguo.core.viewmodel.common.component.WebViewModel.ProgressStyle" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.io.ganguo.webview.WebViewWrapLayout
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/pb_horizontal"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:max="100"
+            tools:progress="50"
+            android:progress="@{data.progress}"
+            android:bind_visible_boolean_to_view="@{data.progressStyle==ProgressStyle.HORIZONTAL&amp;&amp;data.isLoading()}"
+            android:theme="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_height="@dimen/dp_2" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/pb_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:indeterminateOnly="true"
+            android:bind_visible_boolean_to_view="@{data.progressStyle==ProgressStyle.CIRCLE&amp;&amp;data.isLoading()}"
+            android:theme="@style/Widget.AppCompat.ProgressBar"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

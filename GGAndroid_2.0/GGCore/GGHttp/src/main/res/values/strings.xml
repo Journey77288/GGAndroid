@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GGHttp</string>
+    <string name="str_http_network_error">network error</string>
+    <string name="str_http_unknown_error">unknown error</string>
+    <string name="str_http_token_failure">token failure</string>
+    <string name="str_http_service_error">service error</string>
+    <string name="str_http_service_not_responding">Service not responding</string>
+</resources>

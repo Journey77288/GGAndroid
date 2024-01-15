@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.common.HeaderViewModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:bind_bg_res="@{data.background}"
+        android:elevation="@dimen/dp_4"
+        android:bind_visibility_boolean="@{data.headerVisible}"
+        tools:targetApi="lollipop">
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:bind_appendViewList="@{data.getCenterItems}" />
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/lly_item_container_center"
+            android:descendantFocusability="afterDescendants"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:bind_appendViewList="@{data.getLeftItems}" />
+
+        <LinearLayout
+            android:id="@+id/lly_item_container_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/lly_item_container_center"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal"
+            android:bind_appendViewList="@{data.getRightItems}" />
+
+    </RelativeLayout>
+</layout>

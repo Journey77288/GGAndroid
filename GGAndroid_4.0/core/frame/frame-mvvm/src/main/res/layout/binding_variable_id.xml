@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="androidx.databinding.BaseObservableField"/>
+
+        <variable
+            name="data"
+            type="io.ganguo.mvvm.viewmodel.ViewModel" />
+
+        <variable
+            name="vh"
+            type="io.support.recyclerview.adapter.hodler.ItemViewHolder" />
+
+
+        <variable
+            name="adapter"
+            type="io.support.recyclerview.adapter.RecyclerViewAdapter" />
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+</layout>

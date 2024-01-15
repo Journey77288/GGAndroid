@@ -1,0 +1,211 @@
+/**
+ * author : leo
+ * time   : 2020/03/11
+ * desc   : 依赖库配置管理
+ */
+ext {
+    versions = [
+            'retrofit_version'   : '2.6.2',
+            'okhttp_version'     : '4.2.1',
+            'junit_version'      : '4.12',
+            'test_runner_version': '1.2.0',
+            'robolectric_version': '4.3.1',
+            'espresso_version'   : '3.0.2',
+            'mockito'            : '2.21.0',
+            'wechat_version'     : '6.6.4',
+            'mockito'            : '2.8.47',
+            'sina_version'       : '4.4.1',
+            'facebook_version'   : '5.8.0',
+            'kotlin_version'     : '1.3.60',
+            'anko_version'       : '0.10.8',
+            'glide_version'      : '4.10.0',
+            'smart_refresh'      : '2.0.0-alpha-1',
+            'kotlin_coroutines'  : '1.3.1',
+            'objectbox_version'  : '2.5.1',
+    ]
+
+    libs = [
+            /**
+             * support package
+             */
+            androidx_v4                    : "androidx.legacy:legacy-support-v4:1.0.0",
+            androidx_v7                    : "androidx.appcompat:appcompat:1.1.0",
+            androidx_v13                   : "androidx.legacy:legacy-support-v13:1.0.0",
+            androidx_core                  : "androidx.core:core:1.1.0",
+            androidx_fragment              : "androidx.fragment:fragment:1.1.0",
+            androidx_core_ui               : "androidx.legacy:legacy-support-core-ui:1.0.0",
+            androidx_core_utils            : "androidx.legacy:legacy-support-core-utils:1.0.0",
+            androidx_browser               : "androidx.browser:browser:1.0.0",
+            androidx_recycler_view         : "androidx.recyclerview:recyclerview:1.1.0",
+            androidx_annotations           : "androidx.annotation:annotation:1.1.0",
+            androidx_cardview              : "androidx.cardview:cardview:1.0.0",
+            androidx_constrainLayout       : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            androidx_multidex              : 'androidx.multidex:multidex:2.0.1',
+            androidx_ifecycle_extensions   : "androidx.lifecycle:lifecycle-extensions:2.1.0",
+            androidx_lifecycle_runtime     : "androidx.lifecycle:lifecycle-runtime:2.1.0",
+            androidx_preference            : "androidx.preference:preference-ktx:1.1.0",
+            design                         : "com.google.android.material:material:1.1.0-beta02",
+
+
+            /**
+             * utils package
+             */
+            yearclass                      : 'com.facebook.device.yearclass:yearclass:2.1.0',
+            leakcanary_android             : "com.squareup.leakcanary:leakcanary-android:2.4",
+            conscrypt                      : 'org.conscrypt:conscrypt-android:2.4.0',
+
+            /**
+             * http package
+             */
+            retrofit                       : "com.squareup.retrofit2:retrofit:${versions.retrofit_version}",
+            retrofit_converter_gson        : "com.squareup.retrofit2:converter-gson:${versions.retrofit_version}",
+            retrofit_adapter_rxjava        : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit_version}",
+            okhttp_logging                 : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp_version}",
+            okhttpprofiler                 : 'com.itkacher.okhttpprofiler:okhttpprofiler:1.0.7',
+            okhttp                         : "com.squareup.okhttp3:okhttp:${versions.okhttp_version}",
+            gson                           : 'com.google.code.gson:gson:2.8.6',
+
+
+            /**
+             * extra
+             */
+            systembartint                  : 'com.readystatesoftware.systembartint:systembartint:1.0.4',
+            rounded_image_view             : 'com.makeramen:roundedimageview:2.3.0',
+            stetho                         : 'com.facebook.stetho:stetho:1.5.1',
+            stetho_okhttp                  : 'com.facebook.stetho:stetho-okhttp3:1.5.1',
+            squareup_okio                  : 'com.squareup.okio:okio:2.4.1',
+            chucker                        : "com.github.ChuckerTeam.Chucker:library:3.1.2",
+            chucker_library_no_op          : "com.github.ChuckerTeam.Chucker:library-no-op:3.1.2",
+
+            /**
+             * picasso
+             */
+            picasso                        : 'com.squareup.picasso:picasso:2.71828',
+            picasso_transformations        : 'jp.wasabeef:picasso-transformations:2.2.1',
+            gpuimage_library               : 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1',
+
+            /**
+             * glide
+             */
+            glide                          : "com.github.bumptech.glide:glide:${versions.glide_version}",
+            glide_annotation_processor     : "com.github.bumptech.glide:compiler:${versions.glide_version}",
+            glide_recyclerview_integration : "com.github.bumptech.glide:recyclerview-integration:${versions.glide_version}@aar",
+            glide_transformations          : 'jp.wasabeef:glide-transformations:4.0.1',
+
+            /**
+             * rx
+             */
+            rxjava                         : 'io.reactivex.rxjava2:rxjava:2.2.15',
+            rxandroid                      : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+            rxrelay                        : 'com.jakewharton.rxrelay2:rxrelay:2.1.1',
+            rx_preferences                 : 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0',
+            rxbinding                      : 'com.jakewharton.rxbinding3:rxbinding:3.0.0',
+
+            /**
+             * object box数据库
+             */
+            objectbox_kotlin               : "io.objectbox:objectbox-kotlin:${versions.objectbox_version}",
+            objectbox_android_objectbrowser: "io.objectbox:objectbox-android-objectbrowser:${versions.objectbox_version}",
+            objectbox_android              : "io.objectbox:objectbox-android:${versions.objectbox_version}",
+            objectbox_rxjava               : "io.objectbox:objectbox-rxjava:${versions.objectbox_version}",
+
+
+            /**
+             * test
+             */
+            junit                          : "junit:junit:${versions.junit_version}",
+            mockito                        : "org.mockito:mockito-core:${versions.mockito}",
+            robolectric                    : "org.robolectric:robolectric:${versions.robolectric_version}",
+            test                           : 'androidx.test:core:1.0.0',
+            androidx_test                  : 'androidx.test:runner:1.2.0',
+
+            /**
+             * share
+             */
+            wechat_sdk                     : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:${versions.wechat_version}",
+            facebook_core                  : "com.facebook.android:facebook-core:${versions.facebook_version}",
+            facebook_login                 : "com.facebook.android:facebook-login:${versions.facebook_version}",
+            facebook_share                 : "com.facebook.android:facebook-share:${versions.facebook_version}",
+            twitter_sdk                    : 'com.twitter.sdk.android:twitter-core:3.3.0@aar',
+            tweet_composer                 : 'com.twitter.sdk.android:tweet-composer:3.3.0@aar',
+            tweet_ui                       : 'com.twitter.sdk.android:tweet-ui:3.3.0@aar',
+            google_play_services_auth      : 'com.google.android.gms:play-services-auth:17.0.0',
+            firebase_core                  : 'com.google.firebase:firebase-core:17.2.0',
+            sina_sdk                       : "com.sina.weibo.sdk:core:${versions.sina_version}:openDefaultRelease@aar",
+
+            /**
+             * common package
+             */
+            avi_loading                    : "com.wang.avi:library:2.1.3",
+            shimmerlayout                  : 'io.supercharge:shimmerlayout:2.1.0',
+            google_zxing                   : 'com.google.zxing:core:3.3.3',
+            recyclerview_animators         : 'jp.wasabeef:recyclerview-animators:3.0.0',
+            photoview                      : 'com.github.chrisbanes:PhotoView:2.1.3',
+            materialprogressbar            : 'me.zhanghai.android.materialprogressbar:library:1.6.0',
+            html_textview                  : 'org.sufficientlysecure:html-textview:3.6',
+            pick_view                      : 'com.contrarywind:Android-PickerView:4.1.9',
+            qiniu                          : 'com.qiniu:qiniu-android-sdk:7.2.0',
+
+
+            /**
+             * kotlin
+             */
+            kotlinx_coroutines_core        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin_coroutines}",
+            kotlinx_coroutines_android     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlin_coroutines}",
+            kotlin_stdlib_jdk7             : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin_version}",
+            kotlin_rx                      : "io.reactivex.rxjava2:rxkotlin:2.4.0",
+            kotlin_core_ktx                : 'androidx.core:core-ktx:1.2.0',
+
+            /**
+             * 下拉刷新框架
+             */
+            smart_refresh_layout           : "com.scwang.smart:refresh-layout-kernel:${versions.smart_refresh}",//核心必须依赖
+            smart_refresh_header_classics  : "com.scwang.smart:refresh-header-classics:${versions.smart_refresh}",       //经典刷新头
+            smart_refresh_header_material  : "com.scwang.smart:refresh-header-material:${versions.smart_refresh}",       //谷歌刷新头
+            smart_refresh_footer_classics  : "com.scwang.smart:refresh-footer-classics:${versions.smart_refresh}",       //经典加载
+
+            /**
+             * 权限请求库kotlin版本
+             */
+            assent                         : 'com.afollestad:assent:2.3.1',
+            /**
+             * 极光推送
+             */
+            jiguang_jpush                  : 'cn.jiguang.sdk:jpush:3.3.4',
+            jiguang_jcore                  : 'cn.jiguang.sdk:jcore:2.1.0',
+
+            /**
+             * Bugly
+             */
+            bugly                          : 'com.tencent.bugly:crashreport:3.1.0',
+
+            spanny                         : 'com.binaryfork:spanny:1.0.4',
+
+            /**
+             * 汉字转拼音
+             */
+            tinypinyin                     : 'com.github.promeg:tinypinyin:2.0.3',
+            tinypinyin_android             : 'com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3',
+
+            /**
+             * 支持java8-stream api
+             */
+            stream                         : 'com.annimon:stream:1.2.1',
+
+            /**
+             * 多语言处理
+             */
+            lingver                        : "com.github.YarikSOffice:lingver:1.3.0",
+
+            /**
+             * 腾讯TBS X5浏览器内核
+             */
+            tbs_sdk                        : 'com.tencent.tbs.tbssdk:sdk:43903',
+
+            /**
+             * 相机
+             */
+            cameraview                     : 'com.otaliastudios:cameraview:2.6.2',
+
+    ]
+}

@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':GGCore:GGUtils')
+    api libs.gson
+    api libs.annotations
+    api libs.rxandroid
+    api libs.rxrelay
+    api libs.rxjava
+}

@@ -1,0 +1,53 @@
+/**
+ * author : leo
+ * time   : 2020/03/11
+ * desc   : App渠道包配置
+ */
+
+apply from: "${rootProject.projectDir}/gradle/config/dependencies.gradle"
+
+/**
+ * 页面用到的变量
+ */
+ext {
+
+    dimensions = [
+            'environment': 'ENVIRONMENT',//环境
+            'packageType': 'PACKAGE_TYPE'//包类型
+    ]
+    flavors = [
+            'alpha'     : 'alpha',
+            'beta'      : 'beta',
+            'preview'   : 'preview',
+            'production': 'production',
+    ] as LinkedHashMap<String, String>
+
+}
+
+android {
+
+    /**
+     * 渠道类型，用于编译分组
+     */
+    flavorDimensions "${dimensions.environment}", "${dimensions.packageType}"
+
+    //配置通用属性
+    productFlavors.all { flavor ->
+        if (flavor.name == "develop" || flavor.name == "official") {
+            addAllFlavorField(flavors, flavor)
+        }
+    }
+}
+
+/**
+ * 添加全部渠道包常量配置
+ * @param flavors
+ * @param flavor
+ * @return
+ */
+static addAllFlavorField(LinkedHashMap<String, String> flavors, Object flavor) {
+    flavors.each { entity ->
+        flavor.buildConfigField "String", entity.key.toUpperCase(), "\"${entity.value}\""
+    }
+}
+

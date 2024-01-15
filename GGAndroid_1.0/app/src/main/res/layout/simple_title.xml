@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/bg_title">
+
+        <Button
+            android:id="@+id/btn_titleLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/title_buttonSpacing"
+            android:background="@drawable/button_title_selector"
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/title_font"
+            android:textColor="@color/title_font"
+            android:text="Left" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/title_font_big"
+            android:layout_centerInParent="true"
+            android:text="MainTitle" />
+
+        <Button
+            android:id="@+id/btn_titleRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/title_buttonSpacing"
+            android:background="@drawable/button_title_selector"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/title_font"
+            android:textColor="@color/title_font"
+            android:text="Right" />
+
+    </RelativeLayout>
+
+</LinearLayout>

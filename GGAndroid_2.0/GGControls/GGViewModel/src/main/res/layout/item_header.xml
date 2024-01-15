@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.common.HeaderItemViewModel" />
+
+        <import type="android.util.TypedValue" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="@{data.isAnimateLayoutChanges}"
+        android:background="@drawable/ripple_default_light"
+        android:bind_visibility_boolean="@{data.visible}"
+        android:clickable="@{data.consumer!=null}"
+        android:gravity="center"
+        android:onClick="@{data.clickCommand}"
+        android:orientation="horizontal"
+        android:paddingLeft="@{data.padding}"
+        android:paddingRight="@{data.padding}">
+        <!--使用setImageResource,避免Glide不支持某些图片类型,如VectorDrawable,StateListDrawable...-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:bind_visibility_boolean="@{data.isImageVisible}"
+            android:src="@{data.drawable}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:bind_text='@{data.text}'
+            android:bind_text_color="@{data.textColor}"
+            android:bind_text_textSize='@{data.fontSize}'
+            android:bind_visibility_boolean="@{data.isTextVisible}"
+            android:paddingLeft="@{data.textPadding}"
+            android:paddingRight="@{data.textPadding}"
+            tools:text="text" />
+
+    </LinearLayout>
+</layout>

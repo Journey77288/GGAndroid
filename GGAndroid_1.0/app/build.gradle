@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+
+    defaultConfig {
+        applicationId "io.ganguo.incubator"
+        minSdkVersion 11
+        targetSdkVersion rootProject.ext.compileSdkVersion
+        versionCode 1
+        versionName "1.0.1"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("ganguo_dev.jks")
+            storePassword "120521"
+            keyAlias "ganguo_dev"
+            keyPassword "120521"
+        }
+        release {
+            storeFile file("ganguo_dev.jks")
+            storePassword "120521"
+            keyAlias "ganguo_dev"
+            keyPassword "120521"
+        }
+    }
+
+    buildTypes {
+        // 测试环境
+        // 测试环境相关的key放这里
+        debug {
+            applicationIdSuffix ".dev"
+            versionNameSuffix "_dev"
+            manifestPlaceholders = [appLabel: "@string/app_name_dev"]// 必改
+            buildConfigField "boolean", "DEV_MODE", "true"
+            buildConfigField "String", "BASE_URL", '"https://meiyanchu.com"' //host, 必改
+            buildConfigField "String", "DATA_PATH", '"GGAndroid_Dev"' //app 数据保存目录, 必改
+
+            debuggable true
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+
+        // 生产环境
+        // 生产环境相关的key放这里
+        release {
+            manifestPlaceholders = [appLabel: "@string/app_name"]// 必改
+            buildConfigField "boolean", "DEV_MODE", "false"
+            buildConfigField "String", "BASE_URL", '"https://youyanchu.com"' //host, 必改
+            buildConfigField "String", "DATA_PATH", '"GGAndroid"'//app 数据保存目录, 必改
+
+            debuggable false
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        //命名各apk
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                def mApplicationId = variant.mergedFlavor.applicationId + (variant.buildType.applicationIdSuffix == null ? "" : variant.buildType.applicationIdSuffix)
+                def mVersionName = variant.mergedFlavor.versionName + (variant.buildType.versionNameSuffix == null ? "" : variant.buildType.versionNameSuffix)
+                if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                    def fileName = "${variant.buildType.name}_${variant.productFlavors[0].name}_${mApplicationId}_${defaultConfig.versionCode}_v${mVersionName}.apk"
+                    output.outputFile = new File(outputFile.parent, fileName)
+                }
+            }
+        }
+    }
+
+    // 多渠道打包
+    // 渠道相关的key放这里
+    productFlavors {
+        webapk {}
+    }
+
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile project(':GGLibrary')
+    compile project(':UILibrary')
+    compile project(':GGimage')
+}

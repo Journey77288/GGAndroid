@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.ganguo.sample">
+
+    <!-- 极光 SDK 注册了这两个权限；如果项目不需要，则可以通过 note 移除 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 停止使用Android 13广告编号权限, Google Play上架要求没有使用要移除 -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" />
+
+    <uses-feature android:name="android.hardware.screen.portrait" />
+
+    <application
+        android:name=".context.AppContext"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="${appLabel}${appLabelSuffix}"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Activity.NoActionbar"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label,android:allowBackup"
+        tools:targetApi="q">
+
+
+        <activity
+            android:name=".view.SplashActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Activity.Splash.Basic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.RouteActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Activity.Splash.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="sample"
+                    android:path="/app"
+                    android:scheme="ganguo" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="io.ganguo.sample.view.service.ServiceSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.SampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.service.image.ImageLoaderSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.service.image.ImageEngineSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.component.ComponentSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.component.BannerSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.component.WebViewSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.component.WebViewSampleDetailActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.service.picker.MediaPickerDemoActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.component.PhotoCropSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.component.scanner.CodeScannerSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.component.scanner.ScannerSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.Scanner"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.component.scanner.CodeCreateSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.component.ExhibitionStateSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.component.SingleImageChooseSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.component.SideBarSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.SupportSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.SchemeSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.cache.CacheSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.skeleton.SkeletonSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.skeleton.SkeletonViewSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.skeleton.SkeletonRecyclerViewActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.cache.SharePreferenceSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.cache.DatabaseSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.PermissionSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.RxActivityResultSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.rxbus.RxBusObserverSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.rxbus.RxBusSenderSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.rxbus.RxBusStickyObserverSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.VersionUpdateSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.LocationSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.download.DownloadSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.download.SingleTaskDownloadActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.download.MultitaskDownloadActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.support.download.NotificationDownloadActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.widget.WidgetSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.widget.SwitchIOSButtonSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.widget.CorerFrameLayoutSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+
+        <activity
+            android:name="io.ganguo.sample.view.service.http.RetrofitHttpSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.service.open.OauthSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.service.open.ShareSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.service.open.OpenSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.service.PaySampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="io.ganguo.sample.view.service.LocaleSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+
+        <activity
+            android:name=".view.TabSampleActivity"
+            android:configChanges="keyboardHidden|locale|orientation|screenSize|uiMode|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity.NoActionbar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- 通知回调 -->
+        <receiver
+            android:name=".receiver.NotificationReceiver"
+            android:exported="true" />
+
+        <!-- 下载服务 -->
+        <service
+            android:name="io.ganguo.download.DownloadService"
+            android:exported="false" />
+    </application>
+</manifest>

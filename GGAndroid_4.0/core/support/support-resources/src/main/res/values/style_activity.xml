@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--  Basic activity theme configuration  -->
+    <style name="Activity.Basic" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Slide.Activity</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges
+        </item>
+    </style>
+
+    <!--Basic no actionBar activity theme configuration -->
+    <style name="Activity.NoActionbar" parent="Activity.Basic">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <!--  Basic transparent activity theme configuration  -->
+    <style name="Activity.Transparent" parent="Activity.NoActionbar">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--  Basic scanner activity theme configuration  -->
+    <style name="Activity.Scanner" parent="Activity.NoActionbar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/black_translucent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <!-- Basic splash activity theme configuration -->
+    <style name="Activity.Splash.Basic" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">@color/red</item>
+        <item name="android:navigationBarColor">@color/red</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Fade.Activity</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@drawable/bg_splash_demo</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges
+        </item>
+        <!-- 屏蔽Android 12 默认SplashScreen显示 -->
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">0</item>
+        <item name="android:windowSplashScreenBrandingImage" tools:targetApi="s">@color/transparent</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@color/transparent</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/transparent</item>
+    </style>
+
+    <!--Transparent splash activity theme configuration -->
+    <style name="Activity.Splash.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+</resources>

@@ -1,0 +1,18 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+
+android {
+    defaultConfig {
+        versionCode 2
+        versionName "1.0.1"
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.androidx_v7
+    implementation libs.google_zxing
+    implementation libs.rxandroid
+    implementation libs.rxjava
+    api libs.cameraview
+}

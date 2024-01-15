@@ -1,0 +1,129 @@
+//Note: 定义全局的gradle依赖包, 统一管理lib版本号
+ext {
+    compile_sdk_version = 28
+    build_tools_version = '28.0.3'
+    min_sdk_version = 19
+    target_sdk_version = 28
+
+    support_version = '28.0.0'
+    retrofit_version = '2.4.0'
+    okhttp_version = '3.11.0'
+
+    junit_version = '4.12'
+    test_runner_version = '1.0.1'
+    robolectric_version = '3.3.2'
+    espresso_version = '3.0.2'
+    mockito = '2.21.0'
+
+    wechat_version = '5.1.4'
+    glide_version = '4.8.0'
+    sina_version = '4.2.7'
+    facebook_version = '4.36.0'
+    leakcanary_version = "1.6.2"
+
+    libs = [
+            /**
+             * support package
+             */
+            v4                         : "com.android.support:support-v4:$support_version",
+            v7                         : "com.android.support:appcompat-v7:$support_version",
+            v13                        : 'com.android.support:support-v13:$support_version',
+            support_compat             : "com.android.support:support-compat:$support_version",
+            support_fragment           : "com.android.support:support-fragment:$support_version",
+            support_core_ui            : "com.android.support:support-core-ui:$support_version",
+            support_core_utils         : "com.android.support:support-core-utils:$support_version",
+            support_customtabs         : "com.android.support:customtabs:$support_version",
+            recycler_view              : "com.android.support:recyclerview-v7:$support_version",
+            annotations                : "com.android.support:support-annotations:$support_version",
+            design                     : "com.android.support:design:$support_version",
+            cardview                   : "com.android.support:cardview-v7:$support_version",
+            constrainLayout            : 'com.android.support.constraint:constraint-layout:1.1.0',
+            support_test               : "com.android.support.test:runner:$test_runner_version",
+            multidex                   : 'com.android.support:multidex:1.0.1',
+            robolectric_v4_support     : "org.robolectric:shadows-support-v4:$robolectric_version",
+            sina_sdk                   : "com.sina.weibo.sdk:core:$sina_version:openDefaultRelease@aar",
+            view_pager_transforms      : 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar',
+
+            /**
+             * utils package
+             */
+            yearclass                  : 'com.facebook.device.yearclass:yearclass:2.1.0',
+            leakcanary_android         : "com.squareup.leakcanary:leakcanary-android:$leakcanary_version",
+            leakcanary_android_no_op   : "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version",
+            leakcanary_support_fragment: "com.squareup.leakcanary:leakcanary-support-fragment:$leakcanary_version",
+            //已知lombok 1.16.20以上版本，会导致运行时打包失败，具体原因可能是proguard-gradle插件，有bug。未确认修复前，不要轻易升级
+            lombok                     : 'org.projectlombok:lombok:1.16.20',
+            parceler_api               : 'org.parceler:parceler-api:1.1.11',
+            parceler                   : 'org.parceler:parceler:1.1.11',
+
+            /**
+             * http package
+             */
+            retrofit                   : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            retrofit_converter_gson    : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            retrofit_adapter_rxjava    : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+            okhttp_logging             : "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
+            okhttp                     : "com.squareup.okhttp3:okhttp:$okhttp_version",
+            gson                       : 'com.google.code.gson:gson:2.7',
+
+            /**
+             * extra
+             */
+            systembartint              : 'com.readystatesoftware.systembartint:systembartint:1.0.4',
+            rounded_image_view         : 'com.makeramen:roundedimageview:2.2.1',
+            stetho                     : 'com.facebook.stetho:stetho:1.4.1',
+            stetho_okhttp              : 'com.facebook.stetho:stetho-okhttp3:1.4.1',
+            chuck                      : 'com.readystatesoftware.chuck:library:1.1.0',
+            chuck_library_no_op        : "com.readystatesoftware.chuck:library-no-op:1.1.0",
+
+            /**
+             * picasso
+             */
+            picasso                    : 'com.squareup.picasso:picasso:2.71828',
+            picasso_transformations    : 'jp.wasabeef:picasso-transformations:2.2.1',
+            gpuimage_library           : 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1',
+
+            /**
+             * rx
+             */
+            rxjava                     : 'io.reactivex.rxjava2:rxjava:2.1.9',
+            rxandroid                  : 'io.reactivex.rxjava2:rxandroid:2.0.2',
+            rxrelay                    : 'com.jakewharton.rxrelay2:rxrelay:2.0.0',
+            rx_preferences             : 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0',
+            rx_objectbox               : 'io.objectbox:objectbox-rxjava:2.1.0',
+
+            /**
+             * test
+             */
+            junit                      : "junit:junit:$junit_version",
+            mockito                    : "org.mockito:mockito-core:$mockito",
+            robolectric                : "org.robolectric:robolectric:$robolectric_version",
+            espresso                   : "com.android.support.test.espresso:espresso-core:$espresso_version",
+
+            /**
+             * share
+             */
+            wechat_sdk                 : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:$wechat_version",
+            facebook_core              : "com.facebook.android:facebook-core:$facebook_version",
+            facebook_login             : "com.facebook.android:facebook-login:$facebook_version",
+            facebook_share             : "com.facebook.android:facebook-share:$facebook_version",
+            twitter_sdk                : 'com.twitter.sdk.android:twitter-core:3.3.0@aar',
+            tweet_composer             : 'com.twitter.sdk.android:tweet-composer:3.3.0@aar',
+            tweet_ui                   : 'com.twitter.sdk.android:tweet-ui:3.3.0@aar',
+            google_play_services_auth  : 'com.google.android.gms:play-services-auth:15.0.1',
+            play_services_plus         : 'com.google.android.gms:play-services-plus:15.0.1',
+            firebase_core              : 'com.google.firebase:firebase-core:16.0.4',
+
+            /**
+             * common package
+             */
+            material_dialogs           : 'com.afollestad.material-dialogs:commons:0.9.4.1',
+            avi_loading                : "com.wang.avi:library:2.1.3",
+            shimmerlayout              : 'io.supercharge:shimmerlayout:2.1.0',
+            google_zxing               : 'com.google.zxing:core:3.3.3',
+            permission                 : "com.yanzhenjie:permission:2.0.0-rc11",
+            recyclerview_animators     : 'jp.wasabeef:recyclerview-animators:2.3.0',
+            photoview                  : 'com.github.chrisbanes:PhotoView:2.1.3',
+            qiniu                      : 'com.qiniu:qiniu-android-sdk:7.2.0',
+    ]
+}

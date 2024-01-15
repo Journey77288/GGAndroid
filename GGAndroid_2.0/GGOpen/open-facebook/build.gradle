@@ -1,0 +1,19 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api libs.facebook_core
+    api libs.facebook_login
+    api libs.facebook_share
+    implementation project(':GGCore:GGUtils')
+    implementation project(':GGOpen:open-core')
+}

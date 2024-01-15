@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.ganguo.incubator">
+
+    <application
+        android:name=".AppContext"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="${appLabel}"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".ui.activity.DemoActivity"
+            android:label="${appLabel}"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!--<activity-->
+        <!--android:name=".ui.activity.MainActivity"-->
+        <!--android:label="${appLabel}"-->
+        <!--android:theme="@style/AppTheme.NoActionBar">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <!--微信分享回调 -->
+        <activity
+            android:name="io.ganguo.incubator.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- active android config-->
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="master_demo.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="
+            io.ganguo.incubator.entity.db.Employee,
+            io.ganguo.incubator.entity.db.Group
+            " />
+
+
+    </application>
+
+</manifest>

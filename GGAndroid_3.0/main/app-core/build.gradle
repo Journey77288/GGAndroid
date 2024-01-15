@@ -1,0 +1,31 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+android {
+    /**
+     * 资源目录配置
+     */
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    //xml命名规范：以activity、item、page、dialog等开头，放到对应的模块文件夹下
+                    'src/main/res/layouts/home',//首页模块 xml文件
+                    'src/main/res/layouts/mine',//我的模块 xml文件
+                    'src/main/res/layouts/general',// 通用模块 xml文件
+                    'src/main/res/layouts',
+                    'src/main/res'
+            ]
+        }
+    }
+}
+/**
+ * 依赖库配置
+ */
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':core:frame:mvvm-v1')
+    api project(':core:service:image:image-glide')
+    api project(':core:service:http:http-retrofit')
+    api project(':core:support:cache')
+
+}
+
+

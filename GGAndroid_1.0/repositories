@@ -1,0 +1,15 @@
+mavenLocal()
+maven { url 'http://ganguo.f3322.org:8081/nexus/content/groups/ganguo_public/' }
+jcenter()
+mavenCentral()
+maven { url 'http://repo2.maven.org/maven2/' }
+maven { url 'http://uk.maven.org/maven2/' }
+maven { url 'http://repository.jboss.org/nexus/content/groups/public/' }
+maven { url 'http://mirrors.ibiblio.org/pub/mirrors/maven2/' }
+maven { url 'http://dl.bintray.com/srs/maven/' }
+maven { url 'https://dl.bintray.com/drummer-aidan/maven' }
+maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+maven { url "https://jitpack.io" }
+maven { url "https://raw.githubusercontent.com/umeng/mvn-repo-umeng/master/repository" }
+
+

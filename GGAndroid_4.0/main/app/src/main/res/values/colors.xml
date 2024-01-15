@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--颜色资源命名规范 -->
+    <!--1、复用模块颜色直接以color_Hex(Hex统一小写)颜色值命名，方便使用时查找，该格式只会在colors.xml中引用。示例：color_d0183b-->
+    <!--2、具体引用处则以color_module_name命名，方便后期更换颜色值及迭代实现多主题需求。示例：color_home_title-->
+
+    <!--  此处为app中使用到的所有颜色值  -->
+    <color name="color_0F0D0D">#0F0D0D</color>
+    <color name="color_7b7b7b">#7b7b7b</color>
+    <color name="color_2196F3">#2196F3</color>
+
+    <!-- 复用模块颜色值   -->
+    <color name="color_title">@color/color_0F0D0D</color>
+
+    <!--  Home模块颜色值  -->
+    <color name="color_home_banner_name">@color/color_2196F3</color>
+    <color name="color_home_cart_count">@color/color_2196F3</color>
+</resources>

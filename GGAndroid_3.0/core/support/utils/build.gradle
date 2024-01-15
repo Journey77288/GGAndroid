@@ -1,0 +1,27 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.androidx_recycler_view
+    implementation libs.recyclerview_animators
+    implementation libs.lingver
+    api libs.kotlinx_coroutines_core
+    api libs.kotlinx_coroutines_android
+    api project(':core:support:resources')
+    api project('::core:service:logger:logger-gg')
+    api libs.yearclass
+    api libs.systembartint
+    api libs.gson
+    api libs.design
+    api libs.androidx_annotations
+    api libs.assent
+    api libs.stream
+    api libs.androidx_ifecycle_extensions
+    api libs.androidx_lifecycle_runtime
+
+    //kotlin
+    api libs.kotlin_stdlib_jdk7
+    api libs.kotlin_rx
+    api libs.kotlin_core_ktx
+}
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Copyright 2017 Zhihu Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    //====================================== Theme Zhihu ===========================================
+
+    <!--activity slide animation -->
+    <style name="Animation.Slide.Activity" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_to_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_to_right</item>
+    </style>
+
+    <style name="Theme.Picker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/Animation.Slide.Activity</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
+        <item name="bucket.dropdown.title.color">@color/bucket_dropdown_title_text</item>
+        <item name="bucket.dropdown.count.color">@color/bucket_dropdown_count_text</item>
+        <item name="item.placeholder.color">#000000</item>
+        <item name="listPopupWindowStyle">@style/Popup</item>
+        <item name="capture.textColor">@color/capture</item>
+        <item name="bucket.empty.text.color">@color/bucket_dropdown_title_text</item>
+        <item name="bottomBar.bg">#FFFFFF</item>
+        <item name="bottomBar.preview.textColor">@color/bottom_bar_preview</item>
+        <item name="bottomBar.apply.textColor">@color/bottom_bar_apply</item>
+        <item name="preview.bottomToolbar.back.textColor">@color/preview_bottom_toolbar_back_text</item>
+        <item name="preview.bottomToolbar.apply.textColor">@color/preview_bottom_toolbar_apply_text</item>
+    </style>
+
+    <style name="Popup" parent="Widget.AppCompat.Light.ListPopupWindow">
+        <item name="android:popupBackground">@color/bucket_popup_bg</item>
+    </style>
+</resources>

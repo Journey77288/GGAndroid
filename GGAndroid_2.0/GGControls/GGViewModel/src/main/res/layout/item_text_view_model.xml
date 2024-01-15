@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.common.TextViewModel" />
+
+        <import type="android.util.TypedValue" />
+    </data>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:bind_bg_res="@{data.backgroundDrawableRes}"
+        android:bind_margin_bottom="@{data.marginBottom}"
+        android:bind_margin_left="@{data.marginLeft}"
+        android:bind_margin_right="@{data.marginRight}"
+        android:bind_margin_top="@{data.marginTop}"
+        android:bind_text_color="@{data.textColor}"
+        android:bind_text_drawableRight="@{data.drawableRightRes}"
+        android:bind_text_maxLength="@{data.maxLength}"
+        android:bind_text_select_colorRes="@{data.textSelectColor}"
+        android:bind_text_sizeUnit="@{TypedValue.COMPLEX_UNIT_PX}"
+        android:bind_text_textSize="@{data.textSize}"
+        android:bind_view_gravity="@{data.gravity}"
+        android:bind_view_height="@{data.height}"
+        android:bind_view_width="@{data.width}"
+        android:clickable="@{data.enable}"
+        android:enabled="@{data.enable}"
+        android:hint="@{data.hint}"
+        android:lines="@{data.maxLine}"
+        android:onClick="@{data.onClick()}"
+        android:paddingLeft="@{data.paddingLeft}"
+        android:paddingTop="@{data.paddingTop}"
+        android:paddingRight="@{data.paddingRight}"
+        android:paddingBottom="@{data.paddingBottom}"
+        android:text="@{data.content}" />
+</layout>

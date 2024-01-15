@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        versionCode 2
+        versionName "2.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    Map<String, String> dependency = rootProject.ext.dependencies;
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile dependency.v4
+    compile dependency.v7
+    compile dependency.recyclerView
+    compile dependency.annotations
+    compile dependency.gson
+    compile dependency.otto
+    compile dependency.yearclass
+    compile dependency.retrofit
+    compile dependency.retrofitConverterGson
+    compile dependency.universalImageLoader
+    compile dependency.glide
+    compile dependency.picasso
+    compile dependency.systembartint
+    compile(dependency.materialDialogs) {
+        transitive = true
+    }
+    testCompile dependency.junit
+}

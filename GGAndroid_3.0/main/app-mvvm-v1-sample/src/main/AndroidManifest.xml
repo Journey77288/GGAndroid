@@ -1,0 +1,196 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.ganguo.demo">
+
+
+    <uses-feature android:name="android.hardware.screen.portrait" />
+
+    <application
+        android:name=".context.AppContext"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
+
+
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:theme="@style/Activity.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.activity.MainActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activity.DiffUtilDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activity.RxBusDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activity.DialogDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.activity.ResultDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activity.HttpDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activity.SwitchButtonActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".view.activity.HFSRDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.WebViewDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.PageStateDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+
+        <activity
+            android:name=".view.activity.BannerDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.ViewPagerDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.TabHorizontalLayoutDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.CollapsingToolbarDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+
+        <activity
+            android:name=".view.activity.CoordinatorAppBarDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.RxDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+
+        <activity
+            android:name=".view.activity.SelectManagerDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+
+        <activity
+            android:name=".view.activity.CustomLoadingStyleActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activity.DatabaseKotlinDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.SideBarActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.LazyLoadDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.LoadingHelperDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.HtmlTextViewActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.CropActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.KeyboardStateDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activity.SaveViewActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activity.PushDemoActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".view.activity.AppUpdateActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <!-- 通知回调 -->
+        <receiver
+            android:name=".receiver.NotificationReceiver"
+            android:exported="true" />
+    </application>
+</manifest>

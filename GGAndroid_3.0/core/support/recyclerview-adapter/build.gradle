@@ -1,0 +1,14 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.androidx_recycler_view
+    implementation (libs.recyclerview_animators){
+        exclude group: 'androidx.recyclerview', module: 'recyclerview'
+    }
+    //kotlin
+    implementation libs.kotlin_stdlib_jdk7
+    implementation libs.kotlin_rx
+    implementation libs.kotlin_core_ktx
+}
+

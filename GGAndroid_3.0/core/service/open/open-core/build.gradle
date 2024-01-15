@@ -1,0 +1,10 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':core:support:factory')
+    api libs.rxandroid
+    api libs.rxjava
+    api libs.kotlin_core_ktx
+}

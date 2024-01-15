@@ -1,0 +1,57 @@
+//甘果封装/第三方依赖Module，通用gradle配置
+apply plugin: 'com.android.library'
+
+android {
+    //编译sdk版本配置
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
+
+    //sdk支持版本配置
+    defaultConfig {
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+    }
+
+    //编译类型
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    //lint检查
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'MissingTranslation'
+    }
+
+    //移除第三方sdk中的档案
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    //java版本配置
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //资源目录配置
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']//指定jniLibs文件存放目录（.so文件）
+        }
+    }
+}

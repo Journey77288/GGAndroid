@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- title -->
+    <dimen name="title_height">@dimen/dp_48</dimen>
+    <dimen name="title_font_big">@dimen/font_22</dimen>
+    <dimen name="title_font">@dimen/font_18</dimen>
+    <dimen name="title_buttonSpacing">@dimen/dp_10</dimen>
+    <dimen name="title_drawablePadding">@dimen/dp_10</dimen>
+
+</resources>

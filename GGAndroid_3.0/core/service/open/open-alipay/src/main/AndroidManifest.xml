@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.ganguo.alipay">
+
+    <application>
+        <activity
+            android:name=".apshare.ShareEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity-alias
+            android:name="${applicationId}.apshare.ShareEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:targetActivity="io.ganguo.alipay.apshare.ShareEntryActivity" />
+    </application>
+</manifest>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.core.viewmodel.common.frame.HeaderContentFooterVModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ViewStub
+            android:id="@+id/vs_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inflatedId="@+id/vs_header"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ViewStub
+            android:id="@+id/vs_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inflatedId="@+id/vs_content"
+            app:layout_constraintBottom_toTopOf="@id/vs_footer"
+            app:layout_constraintTop_toBottomOf="@id/vs_header"
+            app:layout_constraintVertical_weight="1" />
+
+        <ViewStub
+            android:id="@+id/vs_state"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inflatedId="@+id/vs_state"
+            app:layout_constraintBottom_toTopOf="@id/vs_footer"
+            app:layout_constraintTop_toBottomOf="@id/vs_header" />
+
+
+        <ViewStub
+            android:id="@+id/vs_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inflatedId="@+id/vs_footer"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

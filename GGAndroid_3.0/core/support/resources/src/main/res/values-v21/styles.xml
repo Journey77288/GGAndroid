@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="Dialog.Animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_fade_out</item>
+    </style>
+
+    <style name="Dialog.Immersion" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">@color/black_translucent</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Activity.Splash" parent="Activity.NoActionbar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:windowFullscreen">false</item>
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Activity.AnimationFade</item>
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- title -->
+    <color name="bg_content">#FFFFFF</color>
+    <color name="bg_title">#00BCD4</color>
+    <color name="title_button_press">#40CCCCCC</color>
+    <color name="title_font">#FFFFFF</color>
+
+    <!-- 上拉下拉 -->
+    <color name="pull_to_refresh_text">#8a8a99</color>
+    <color name="pull_to_refresh_bg">#FFFFFF</color>
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.demo.viewmodel.activity.ViewPagerDemoVModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/lly_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/include_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/include_viewpager"
+            layout="@layout/include_resuse_view_pager"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_height="@dimen/dp_200" />
+    </LinearLayout>
+</layout>

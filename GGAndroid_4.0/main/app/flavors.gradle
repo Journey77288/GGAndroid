@@ -1,0 +1,182 @@
+/**
+ * author : leo
+ * time   : 2020/03/11
+ * desc   : App渠道包配置
+ */
+
+/**
+ * 页面用到的变量
+ */
+ext {
+    dimensions = [
+            'environment': 'ENVIRONMENT',//环境
+            'packageType': 'PACKAGE_TYPE'//包类型
+    ]
+    flavors = [
+            'alpha'     : 'alpha',
+            'beta'      : 'beta',
+            'preview'   : 'preview',
+            'production': 'production'
+    ] as LinkedHashMap<String, String>
+}
+
+
+/**
+ * 添加全部渠道包常量配置
+ * @param flavors
+ * @param flavor
+ * @return
+ */
+static addAllFlavorField(LinkedHashMap<String, String> flavors, Object flavor) {
+    flavors.each { entity ->
+        flavor.buildConfigField "String", entity.key.toUpperCase(), "\"${entity.value}\""
+    }
+}
+
+
+android {
+    namespace = "io.ganguo.sample"
+
+    /**
+     * 渠道类型，用于编译分组
+     */
+    flavorDimensions "${dimensions.environment}", "${dimensions.packageType}"
+
+    //配置通用属性
+    productFlavors.all { flavor ->
+        if (flavor.name == "develop" || flavor.name == "official") {
+            addAllFlavorField(flavors, flavor)
+        }
+    }
+
+
+    /**
+     * 渠道包配置
+     */
+    productFlavors {
+
+        /**
+         * 开发环境通用配置
+         * 测试服务器/本地局域网服务器
+         */
+        develop {
+            dimension "${dimensions.environment}"
+            applicationId "io.ganguo.incubator"
+            versionNameSuffix "_dev"
+            applicationIdSuffix '.dev'
+            versionCode 1
+            versionName "1.0"
+            manifestPlaceholders = [
+                    appLabelSuffix     : "_dev",
+                    JPUSH_PKGNAME      : applicationId,
+                    JPUSH_APPKEY       : "fb88c4c5166c6d794837512e",
+                    JPUSH_CHANNEL      : "beta",
+                    UMENG_CHANNEL      : "stage",
+                    FACEBOOK_APP_ID    : '"312638299325242"',
+                    FACEBOOK_APP_SCHEME: "fb312638299325242",
+                    QQ_APP_ID          : "101763058",
+                    WECHAT_APP_ID      : "wx544e1226f9251aec"
+            ]
+
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+            // key配置
+            buildConfigField "String", "BUGLY_APPID", '"58b30ed193"'
+            buildConfigField "String", "WECHAT_APP_ID", '"wxa472802468274e0c"'
+            buildConfigField "String", "WECHAT_APP_SECRET", '"ab64c5fa0c097bd74b86b43f0c9955d7"'
+            buildConfigField "String", "QQ_APP_ID", '"1105300508"'
+            buildConfigField "String", "ALIPAY_APP_KEY", '"2016033001253029"'
+            buildConfigField "String", "SINA_APP_KEY", '"1347326661"'
+            buildConfigField "String", "SINA_REDIRECT_URL", '"http://www.baidu.com"'
+            buildConfigField "String", "SINA_SCOPE", '"email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"'
+        }
+
+        /**
+         * 生产环境通用配置
+         * 正式服务器
+         */
+        official {
+            dimension "${dimensions.environment}"
+            applicationId "io.ganguo.incubator"
+            versionCode 1
+            versionName "1.0"
+            manifestPlaceholders = [
+                    appLabelSuffix     : "",
+                    JPUSH_PKGNAME      : applicationId,
+                    JPUSH_APPKEY       : "fb88c4c5166c6d794837512e",
+                    JPUSH_CHANNEL      : "beta",
+                    UMENG_CHANNEL      : "stage",
+                    FACEBOOK_APP_ID    : '"312638299325242"',
+                    FACEBOOK_APP_SCHEME: "fb312638299325242",
+                    QQ_APP_ID          : "101763058",
+                    WECHAT_APP_ID      : "wx544e1226f9251aec"
+            ]
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+            //key配置
+            buildConfigField "String", "BUGLY_APPID", '"58b30ed193"'
+            buildConfigField "String", "WECHAT_APP_ID", '"wxa472802468274e0c"'
+            buildConfigField "String", "WECHAT_APP_SECRET", '"ab64c5fa0c097bd74b86b43f0c9955d7"'
+            buildConfigField "String", "QQ_APP_ID", '"1105300508"'
+            buildConfigField "String", "ALIPAY_APP_KEY", '"2016033001253029"'
+            buildConfigField "String", "SINA_APP_KEY", '"1347326661"'
+            buildConfigField "String", "SINA_REDIRECT_URL", '"http://www.baidu.com"'
+            buildConfigField "String", "SINA_SCOPE", '"email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"'
+        }
+
+        /**
+         * 内测版本 - 开发/内部测试用
+         * 测试服务器
+         */
+        alpha {
+            dimension "${dimensions.packageType}"
+            manifestPlaceholders = [
+                    appLabel: "@string/app_name_alpha",
+            ]
+            buildConfigField "String", "ENVIRONMENT", '"alpha-内测版本"'
+        }
+
+
+        /**
+         * 公测版本 - 一般发送给客户测试使用
+         * 测试服务器
+         */
+        beta {
+            dimension "${dimensions.packageType}"
+            manifestPlaceholders = [
+                    appLabel: "@string/app_name_beta",
+            ]
+            buildConfigField "String", "ENVIRONMENT", '"beta-公测版本"'
+        }
+
+
+        /**
+         * 预览版本(待上线版本，上线前，使用该版本进行回归测试，没有问题才打production包，提交更新到应用市场)
+         * 正式服务器
+         */
+        preview {
+            dimension "${dimensions.packageType}"
+            manifestPlaceholders = [
+                    appLabel: "@string/app_name_preview",
+            ]
+            buildConfigField "String", "ENVIRONMENT", '"preview-预览版本"'
+        }
+
+        /**
+         * 上线版本(最终提交到应用市场的版本)
+         */
+        production {
+            dimension "${dimensions.packageType}"
+            manifestPlaceholders = [
+                    appLabel: "@string/app_name_production",
+            ]
+            buildConfigField "String", "ENVIRONMENT", '"production-上线版本"'
+        }
+        //xiaomi{}
+        //qihu360{}
+        //yingyongbao{}
+    }
+
+}
+
+
+
+

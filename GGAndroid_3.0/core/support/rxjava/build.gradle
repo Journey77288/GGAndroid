@@ -1,0 +1,12 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':core:support:utils')
+    api libs.gson
+    api libs.androidx_annotations
+    api libs.rxandroid
+    api libs.rxrelay
+    api libs.rxjava
+    api libs.rxbinding
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--颜色资源命名规范：请根据项目情况选择，2选1 -->
+    <!--1、一般项目：直接以color_Hex(Hex统一大写)颜色值命名，方便使用时查找。示例：color_D0183B-->
+    <!--2、多主题项目：直接以color_name命名，方便使用时查找。示例：color_title_bg-->
+</resources>

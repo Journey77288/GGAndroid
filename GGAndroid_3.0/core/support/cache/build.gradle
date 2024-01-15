@@ -1,0 +1,18 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.androidx_annotations
+    api libs.androidx_preference
+    api libs.rx_preferences
+
+    //kotlin
+    api libs.kotlin_stdlib_jdk7
+    api libs.kotlin_rx
+    api libs.kotlin_core_ktx
+
+    //object box
+    api libs.objectbox_kotlin
+    api libs.objectbox_rxjava
+}
+

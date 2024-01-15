@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.sample.viewmodel.component.ActivityPhotoCropSampleVModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fly_header"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content" />
+
+        <io.ganguo.scissor.view.widget.CropView
+            android:id="@+id/cv_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/fly_header"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/black"
+            app:cropviewViewportOverlayPadding="@dimen/dp_16"
+            app:cropviewViewportCornerRadius="@dimen/dp_10"
+            app:cropviewShape="rectangle"
+            app:cropviewStrokeColor="@color/white"
+            app:cropviewStrokeInterval="@dimen/dp_6"
+            app:cropviewStrokeWidth="@dimen/dp_1"
+            app:cropviewViewportRatio="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:layout_margin="@dimen/dp_20"
+            android:text="@string/str_crop_shape"
+            android:textAllCaps="false"
+            android:textSize="@dimen/font_13"
+            android:onClick="@{data::actionChangeShape}"
+            android:textColor="@color/black"
+            android:paddingHorizontal="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_viewport_ratio"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:layout_margin="@dimen/dp_20"
+            android:text="@string/str_crop_ratio"
+            android:textAllCaps="false"
+            android:textSize="@dimen/font_13"
+            android:onClick="@{data::actionChangeViewportRatio}"
+            android:textColor="@color/black"
+            android:paddingHorizontal="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

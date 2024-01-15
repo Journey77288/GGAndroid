@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.demo.viewmodel.item.ItemDemoVModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_default"
+        android:padding="@dimen/dp_5">
+
+        <Button
+            android:id="@+id/btn_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:onClick="@{data.onClick()}"
+            android:text='@{data.btnText??"Button",default=Button}'
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/btn_action"
+            android:maxLines="2"
+            android:text='@{data.content}'
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_16"
+            tools:text="content: preview" />
+
+    </RelativeLayout>
+</layout>

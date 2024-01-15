@@ -1,0 +1,7 @@
+apply from: "${rootProject.projectDir}/gradle/config/module.gradle"
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':core:service:pay:pay-core')
+    api(name: 'alipaySdk-15.7.5-20200422171619', ext: 'aar')
+}

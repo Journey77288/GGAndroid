@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.sample.viewmodel.support.rxbus.ItemRxBusObserverVModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp_15"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_observer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.message}"
+            android:textSize="@dimen/font_14"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/str_rxbus_send_message"
+            android:onClick="@{data::actionEnterSendMessagePage}"
+            android:bind_visible_boolean_to_view="@{data.buttonVisible}"
+            android:theme="@style/ButtonStyle" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+
+dependencies {
+    implementation(libs.qiniu) {
+        exclude module: 'okhttp'
+    }
+    implementation libs.rxjava
+    implementation libs.annotations
+    testImplementation libs.junit
+}

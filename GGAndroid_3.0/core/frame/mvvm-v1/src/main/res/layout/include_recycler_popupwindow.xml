@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.pack.common.popupwindow.REWindowVModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:bind_margin="@{data.cardMargin}"
+            app:cardBackgroundColor="@{data.cardBackgroundColor}"
+            app:cardCornerRadius="@{data.cardCornerRadius}"
+            app:cardElevation="@{data.cardElevation}"
+            app:cardMaxElevation="@{data.cardMaxElevation}"
+            app:contentPadding="@{data.contentPadding}">
+
+            <include
+                android:id="@+id/include_recycler"
+                layout="@layout/include_recycler" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+
+</layout>

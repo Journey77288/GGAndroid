@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.demo.viewmodel.item.ItemSelectVModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_default"
+        android:descendantFocusability="beforeDescendants"
+        android:onClick="@{(view)->data.onCheckClick()}"
+        android:padding="@dimen/dp_5">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:checked="@{data.selectHelper.selected.value}"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/checkBox"
+            android:bind_visibility_boolean="@{data.selectHelper.selected.value}"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="已选中"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_16"
+            tools:text="选中状态: 未选中" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/checkBox"
+            android:bind_visibility_boolean="@{!data.selectHelper.selected.value}"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="未选中"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_16"
+            tools:text="选中状态: 未选中" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="@{(view)->data.onDeleteClick()}"
+            android:text="删除"
+            android:textColor="@color/colorPrimary" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.ganguo.factroy" >
+
+    <!--  适配Android11包可见度  -->
+    <queries>
+        <package android:name="com.whatsapp" />
+        <package android:name="org.telegram.messenger" />
+        <package android:name="com.tencent.mm" />
+        <package android:name="jp.naver.line.android" />
+        <package android:name="com.twitter.android" />
+        <package android:name="com.tencent.mobileqq" />
+        <package android:name="com.eg.android.AlipayGphone" />
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.sina.weibo" />
+    </queries>
+</manifest>

@@ -1,0 +1,32 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.ganguo.facebook">
+
+    <application>
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities='com.facebook.app.FacebookContentProvider${FACEBOOK_APP_ID}'
+            android:exported="true" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="${FACEBOOK_APP_SCHEME}" />
+            </intent-filter>
+        </activity>
+    </application>
+    <!--  适配Android11包可见度  -->
+    <queries>
+        <!-- Facebook SDK -->
+        <package android:name="com.facebook.katana" />
+    </queries>
+</manifest>
+

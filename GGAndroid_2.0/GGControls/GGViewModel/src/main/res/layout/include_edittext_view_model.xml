@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.common.EditTextViewModel" />
+
+        <import type="io.ganguo.utils.util.Strings" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:bind_visibility_boolean="@{data.visible}"
+        android:gravity="bottom">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:bind_drawable_xml_res="@{data.leftIcon}"
+            android:bind_visibility_boolean="@{data.showLeftIcon()}"
+            android:onClick="@{data.leftIconClick()}" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:bind_drawable_xml_res="@{data.rightIcon}"
+            android:bind_visibility_boolean="@{data.showRightIcon()}"
+            android:onClick="@{data.rightIconClick()}" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="@{data.enable}"
+            android:hint='@{data.showFloatingLabel() ? data.hint : ""}'
+            android:paddingLeft="@{data.showLeftIcon() &amp;&amp; !data.showLeftIconInsideEditText() ?  @dimen/dp_48 : @dimen/dp_1 }"
+            android:paddingRight="@{data.showRightIcon() &amp;&amp; !data.showRightIconInsideEditText() ?  @dimen/dp_48 : @dimen/dp_1 }"
+            android:setError="@{data.errorMessage}"
+            android:setErrorEnabled="@{Strings.isNotEmpty(data.errorMessage)}"
+            app:counterOverflowTextAppearance="@style/EditTextCounterOverrideStyle"
+            app:counterTextAppearance="@style/EditTextCounterStyle"
+            app:errorTextAppearance="@style/EditTextErrorStyle"
+            app:hintTextAppearance="@style/TextHintStyle"
+            app:setCounterEnabled="@{data.showCounter}"
+            app:setCounterMaxLength="@{data.maxCountNumber}">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:afterTextChanged="@{data.afterTextChanged()}"
+                android:bind_edit_text_bg_visible="@{data.enable}"
+                android:enabled="@{data.enable}"
+                android:hint='@{data.showFloatingLabel() ? "" : data.hint}'
+                android:imeOptions="@{data.imeOptions}"
+                android:inputType="@{data.inputType}"
+                android:onEditorActionListener="@{data.getActionListener()}"
+                android:paddingLeft="@{data.showLeftIconInsideEditText() ? @dimen/dp_48 : @dimen/dp_1}"
+                android:paddingRight="@{data.showRightIconInsideEditText() ? @dimen/dp_48 : @dimen/dp_1}"
+                android:text="@={data.content}"
+                android:theme="@style/EditTextTheme" />
+        </android.support.design.widget.TextInputLayout>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,26 @@
+apply from: "${rootProject.projectDir}/gradle/config/app.gradle"
+
+android {
+
+    /**
+     * 渠道包配置
+     */
+    productFlavors {
+        /**
+         * demo 包
+         */
+        sample {
+            applicationId "io.scanner.sample"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+
+}
+
+dependencies {
+    implementation project(':core:component:scanner')
+    implementation project(':core:component:single-image-chooser')
+    implementation project(':core:frame:mvvm-v1')
+    api project(':core:service:image:image-glide')
+}

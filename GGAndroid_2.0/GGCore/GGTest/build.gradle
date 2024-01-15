@@ -1,0 +1,15 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.annotations
+    androidTestImplementation(libs.espresso) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+    implementation libs.junit
+    implementation libs.mockito
+    implementation libs.robolectric
+    implementation libs.robolectric_v4_support
+}

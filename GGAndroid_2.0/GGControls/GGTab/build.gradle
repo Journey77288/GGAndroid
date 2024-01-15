@@ -1,0 +1,9 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':GGCore:GGUtils')
+    implementation libs.v4
+}

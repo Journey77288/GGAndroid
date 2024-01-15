@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.viewmodel.pack.common.RecyclerViewModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:bind_adapter="@{data.getAdapter}"
+        android:bind_item_decoration="@{data.getItemDecoration}"
+        android:bind_layout_manager="@{data.getLayoutManager}"
+        android:bind_over_scroll="@{data.isOverScroll()}"
+        android:bind_padding_bottom="@{data.paddingBottom}"
+        android:bind_padding_left="@{data.paddingLeft}"
+        android:bind_padding_right="@{data.paddingRight}"
+        android:bind_padding_top="@{data.paddingTop}"
+        android:bind_span_size_lookup="@{data.getSpanSizeLookup}"
+        android:bind_view_height="@{data.viewHeight}"
+        android:bind_view_width="@{data.viewWidth}"
+        android:clipToPadding="false" />
+
+</layout>

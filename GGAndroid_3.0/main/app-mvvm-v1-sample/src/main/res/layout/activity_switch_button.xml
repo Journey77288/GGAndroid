@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="io.ganguo.demo.viewmodel.activity.SwitchButtonDemoVModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include_header"
+            layout="@layout/include_header" />
+
+
+        <io.ganguo.switchs.SwitchIOSButton
+            android:id="@+id/sw_ios1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_40"
+            app:isEnableThumbShadow="true"
+            app:thumbBgShadowColor="@color/black"
+            app:thumbOnBgColor="@color/white"
+            app:thumbRadius="@dimen/dp_14"
+            app:trackHeight="@dimen/dp_31"
+            app:trackOffBgColor="@color/color_e3e3e3"
+            app:trackOffTransitBgColor="@color/gray_dark"
+            app:trackOnBgColor="@color/color_4cd964"
+            app:trackWidth="@dimen/dp_51" />
+
+        <io.ganguo.switchs.SwitchIOSButton
+            android:id="@+id/sw_ios2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_40"
+            app:iosLeftLineColor="@color/white"
+            app:iosLeftLineShow="true"
+            app:iosRightCircleColor="@color/gray_dark"
+            app:iosRightCircleShow="true"
+            app:isEnableThumbShadow="false"
+            app:thumbBgShadowColor="@color/black"
+            app:thumbOnBgColor="@color/white"
+            app:thumbRadius="@dimen/dp_14"
+            app:trackHeight="@dimen/dp_31"
+            app:trackOffBgColor="@color/color_e3e3e3"
+            app:trackOffTransitBgColor="@color/gray_dark"
+            app:trackOnBgColor="@color/color_4cd964"
+            app:trackWidth="@dimen/dp_51" />
+
+    </LinearLayout>
+</layout>

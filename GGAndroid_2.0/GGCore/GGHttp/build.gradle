@@ -1,0 +1,30 @@
+apply from: "${rootProject.projectDir}/config/libConfig.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs;
+    implementation project(':GGCore:GGUtils')
+    api libs.rxandroid
+    api libs.rxrelay
+    api libs.rxjava
+    api libs.okhttp
+    api libs.retrofit
+    api libs.retrofit_converter_gson
+    api libs.okhttp_logging
+    api libs.retrofit_adapter_rxjava
+
+    api libs.stetho
+    api libs.stetho_okhttp
+    releaseApi libs.chuck_library_no_op
+    debugApi(libs.chuck) {
+        exclude group: 'com.android.support'
+    }
+}

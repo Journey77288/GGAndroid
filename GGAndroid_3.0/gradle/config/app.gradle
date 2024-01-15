@@ -1,0 +1,92 @@
+/**
+ * author : leo
+ * time   : 2020/03/11
+ * desc   : APP打包配置
+ */
+apply plugin: 'com.android.application'
+apply from: "${rootProject.projectDir}/gradle/config/environment.gradle"
+
+
+android {
+
+    /**
+     * 默认打包配置
+     */
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+        multiDexEnabled true
+    }
+
+    /**
+     * apk打包签名配置
+     */
+    signingConfigs {
+        keystoreDebug {
+            storeFile file("${rootProject.projectDir}/gradle/config/keystore/ganguo_dev.jks")
+            storePassword "120521"
+            keyAlias "ganguo_dev"
+            keyPassword "120521"
+        }
+
+        keystoreRelease {
+            storeFile file("${rootProject.projectDir}/gradle/config/keystore/ganguo_dev.jks")
+            storePassword "120521"
+            keyAlias "ganguo_dev"
+            keyPassword "120521"
+        }
+    }
+
+    flavorDimensions "version"
+    /**
+     * 编译版本类型
+     */
+    buildTypes {
+        debug {
+            buildConfigField "int", "LOG_LEVEL", "2" // Log.VERBOSE
+            buildConfigField "String", "PACKAGING_TIME", '""'
+            debuggable true
+            crunchPngs false // debug构建类型禁用PNG运算
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false // debug包用于开发时使用, 一般不需要混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.keystoreDebug
+        }
+        release {
+            buildConfigField "int", "LOG_LEVEL", "4" // Log.INFO
+            buildConfigField "String", "PACKAGING_TIME", "\"${packagingTime()}\""
+            debuggable false
+            crunchPngs true // 发布构建开启PNG运算，减少包体积
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled true // 强烈建议使用代码混淆, 用于测试部门、客户测试、上线
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.keystoreRelease
+        }
+
+        // 命名各apk
+        applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                def mApplicationId = variant.mergedFlavor.applicationId + (variant.buildType.applicationIdSuffix == null ? "" : variant.buildType.applicationIdSuffix)
+                def mVersionName = variant.mergedFlavor.versionName + (variant.buildType.versionNameSuffix == null ? "" : variant.buildType.versionNameSuffix)
+                def mVersionCode = variant.mergedFlavor.versionCode + (variant.buildType.versionNameSuffix == null ? "" : variant.buildType.versionCodeSuffix)
+                def mBuildTypeName = variant.buildType == null ? "" : variant.buildType.name + "_"
+                def mProductFlavorsName = variant.productFlavors[0] == null ? "" : variant.productFlavors[0].name + "_"
+                def date = new Date().format("yyyy_MM_dd_HH_mm_ss")
+                outputFileName = "${mBuildTypeName}${mProductFlavorsName}${mApplicationId}_${mVersionCode}_v${mVersionName}_${date}.apk"
+            }
+        }
+    }
+}
+
+
+/**
+ * 得到打包时间
+ * @param isTest
+ * @return
+ */
+static String packagingTime() {
+    return new Date().format("yyyy-MM-dd HH:mm:ss").toString()
+}

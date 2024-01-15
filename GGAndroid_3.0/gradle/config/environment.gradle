@@ -1,0 +1,117 @@
+/**
+ * author : leo
+ * time   : 2020/03/11
+ * desc   : 项目编译环境参数配置
+ */
+apply from: "${rootProject.projectDir}/gradle/config/dependencies.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+/**
+ * Kotlin Parcelize 注解配置
+ */
+androidExtensions {
+    experimental = true
+}
+
+ext {
+    compile_sdk_version = 29
+    build_tools_version = '29.0.2'
+    min_sdk_version = 21
+    target_sdk_version = 29
+}
+
+android {
+
+    /**
+     * 配置编译SDK版本
+     */
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+    defaultConfig {
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+
+
+    /**
+     * dex预处理，编译加速配置
+     */
+    dexOptions {
+        jumboMode = true
+        javaMaxHeapSize "4g"
+        dexInProcess true
+        preDexLibraries = false
+    }
+
+    /**
+     * 配置dataBinding
+     */
+    dataBinding {
+        enabled = true
+    }
+
+    /**
+     * lint检查配置
+     */
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'MissingTranslation'
+    }
+
+    /**
+     * 编译属性配置
+     */
+    compileOptions {
+        //开启增量编译
+        incremental = true
+        //配置java编译版本
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    /**
+     * 配置编译资源目录
+     */
+    sourceSets {
+        debug.setRoot('src/debug')
+        release.setRoot('src/release')
+        main {
+            //指定jniLibs文件存放目录（.so文件）
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    /**
+     * 移除第三方sdk中的文档，避免编译冲突
+     */
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'lib/x86/libweibosdkcore.so'
+        exclude 'lib/armeabi-v7a/libweibosdkcore.so'
+        exclude 'lib/arm64-v8a/libweibosdkcore.so'
+        exclude 'lib/armeabi/libweibosdkcore.so'
+        exclude 'lib/mips/libweibosdkcore.so'
+        exclude 'lib/mips64/libweibosdkcore.so'
+        exclude 'lib/x86_64/libweibosdkcore.so'
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+    }
+}
